@@ -3,7 +3,7 @@
     "dev": "parcel src/resources/index.html",
     "prepare": "husky install",
     "postinstall": "husky install",
-    "watch": "json-server --watch database.json"
+    "watch": "json-server --watch database.json --port 8000"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",
@@ -32,10 +32,7 @@
   "license": "ISC",
   "description": "",
   "lint-staged": {
-    "*.js": [
-      "npm run lint",
-      "npm run format",
-      "git add ."
-    ]
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}" : "prettier --write"
   }
 }

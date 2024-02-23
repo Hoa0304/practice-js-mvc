@@ -18,6 +18,7 @@
 - HTML5/CSS3
 - JavaScript
 - Parcel
+- JSON Server/ Axios
 - MVCS
 
 
@@ -31,8 +32,17 @@
 - Install the dependencies and devDependencies and start the server.
 
 ```
+cd practice-js-mvc
+npm i
+npm run watch
+
+http://localhost:8000
+```
+
+```
+cd practice-js-mvc
 $npm i
-$npm start
+$npm run dev
 
 Open on web: http://localhost:1234
 ```
