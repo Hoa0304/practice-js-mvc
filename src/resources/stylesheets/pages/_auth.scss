@@ -1,0 +1,28 @@
+@use "../abstracts/" as *;
+
+.wrapper {
+	@include center;
+    @include flex($direction:column, $justify:center);
+    width: 30%;
+    height: 80%;
+    top: 10%;
+    left: 35%;
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    &__top {
+        text-align: center;
+        @include font($font-family: $primary-font);
+
+    }
+    &__form {
+        @include font($font-family: $primary-font);
+        &__question {
+            @include flex($direction:row, $justify:space-between);
+            &-pass{
+                color: black;
+            }
+        }
+
+    }
+}
