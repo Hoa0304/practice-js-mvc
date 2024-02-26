@@ -1,0 +1,116 @@
+@use "../abstracts/" as *;
+
+.login,
+.registration{
+    @include flex($justify:center,$align:center);
+    height: 100%;
+}
+.wrapper {
+    @include flex($direction:column, $align:center, $justify: space-between);
+    width: 30%;
+    height: 88%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2% 4% 11% 4%;
+    box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
+    &__top {
+        width: 95%;
+        text-align: center;
+        @include flex($direction:column,$align: center,$gap:40px);
+        
+        figcaption{
+            @include flex($direction:column);
+        }
+        &-primary {
+            @include font($primary-font,16px,700);
+        }
+        &-secondary {
+            @include font($primary-font,13px,400);
+            color: $secondary-color;
+        }
+    }
+    &__form {
+        width: 100%;
+        gap: 10px;
+        margin-top: 30px;
+        @include flex($direction:column);
+        @include font($primary-font,13px,700);
+        
+        &__box:nth-child(1){
+            input{
+                border-radius: 5px;
+            }
+        }
+        &__box{
+            width: 100%;
+            @include flex($direction:column);
+            gap: 3px;
+            @include font($secondary-font,14px,400);
+            color: $text;
+            &-input{
+                width: 100%;
+                padding: 3%;
+                border-radius: 8px 0 0 8px;
+                border: 1px solid rgba(0,0,0,0.3);
+                outline: none;
+            }
+            &-input::placeholder{
+                @include font($primary-font,13px,700);
+            }
+            .passwordfield{
+                width: 100%;
+                @include flex($justify:center,$align:center);
+
+                input{
+                    border-right: none; 
+                }
+                figure{
+                    height: 100%;
+                    @include flex($justify:center,$align:center);
+                    border:1px solid rgba(0,0,0,0.3) ;
+                    border-left: none;
+                    padding: 1%;
+                    border-radius: 0 8px 8px 0;
+                    outline: none;
+                }
+            }
+        }
+
+        &__question {
+            margin-top: 10px;
+            margin-bottom: 15px;
+           @include flex($justify:space-between,$align:center);
+           @include font($primary-font,12px,600);
+            &-pass{
+                color: $primary-color;
+                text-decoration: underline;
+            }
+            &__box{
+                accent-color: $third-color;
+            }
+        }
+        &-log,
+        &-reg {
+            @include button(100%,40px,$third-color,5px,none,0px);
+            @include font($primary-font,15px,700);
+            @include color(white);
+        }
+        &-reg {
+            margin-top: 10px;
+        }
+        &__bottom{
+            margin-top: 40px;
+            width: 100%;
+            @include flex($justify:space-between);
+            &--text{
+                margin-top: -20px;
+
+                @include font($primary-font,11px,600);
+                &-link{
+                    color: $primary-color;
+                    text-decoration: underline;
+                }
+            }
+        }   
+    }
+}
