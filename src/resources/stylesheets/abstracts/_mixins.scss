@@ -1,12 +1,6 @@
 @use './function';
 @use './variables' as *;
 
-@mixin center() {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @mixin color($color:false,$background:false){
   @if $color != false{
     color: $color;
@@ -14,7 +8,6 @@
   @if $background != false{
     background-color: $background;
   }
-
 }
 @mixin font($font-family:false,$font-size:false,$font-weight:false,$font-style:false,$line-height:false){
   @if ($font-family != false) {
@@ -23,12 +16,10 @@
   @if $font-size{
     font-size: $font-size; 
   }
-    
   @if $font-weight{
     font-weight: $font-weight;
   }
   font-style: normal;
-    
   @if $line-height{
     line-height: $line-height;
   }
@@ -85,4 +76,14 @@
   background-image: url($bg);
   background-size: cover;
   background-repeat: no-repeat;
+}
+@mixin tablet {
+  @media (min-width:$medium) and (max-width: $tablet) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media screen and (max-width: $mobiles) {
+    @content;
+  }
 }
