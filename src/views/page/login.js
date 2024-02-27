@@ -44,7 +44,7 @@ const Login = () => {
       </div>
       <div class="wrapper__form__question">
         <div class = "wrapper__form__question__box">
-        <input type="checkbox" name="remember" id="remember">
+        <input type="checkbox" name="checked" id="checked">
         <label for="remember">Remember me</label>
         </div>
         <a class="wrapper__form__question-pass" href="#">Forgot password?</a>

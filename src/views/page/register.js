@@ -70,12 +70,12 @@ return `
     <button class="wrapper__form-reg">Register</button>
     </form>
 
-    <div class="wrapper__form__bottom">
-        <span class="wrapper__form__bottom--text">
+    <div class="wrapper__form__bottoms">
+        <span class="wrapper__form__bottoms--text">
             Already a User? 
-            <a class="wrapper__form__bottom--text-link">Login now</a>
+            <a class="wrapper__form__bottoms--text-link">Login now</a>
         </span>
-        <span class="wrapper__form__bottom--text">
+        <span class="wrapper__form__bottoms--text">
             Use as Guest 
         </span>
     </div>
