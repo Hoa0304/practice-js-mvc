@@ -1,0 +1,15 @@
+@use "../abstracts/" as *;
+
+.home {
+    overflow: hidden;
+    height: 90%;
+    margin: 2% 0 0 2%;
+    @include flex();    
+    &__sidebar {
+        width: 20%;
+
+    }
+    &__main {
+        width: 60%;
+    }
+}
