@@ -2,9 +2,8 @@
 
 .sidebar {
     @include flex($direction: column,$align: start,$justify: space-between);
-    width: 20%;
-    height: 90%;
     margin: 2% 0 0 2%;
+    height: 100%;
     padding: 60px;
     background-color: white;
     border-radius: 10px 0px 0px 10px;
@@ -41,7 +40,6 @@
             }
         }
     }
-
     &__final {
         ul {
             list-style: none;
@@ -54,5 +52,4 @@
             text-decoration: none;
         } 
     }
-  
 }
