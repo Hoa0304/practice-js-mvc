@@ -19,4 +19,5 @@ export {default as things} from './things.svg'
 export {default as think} from './think.svg' 
 export {default as tick} from './tick.svg' 
 export {default as trac} from './trac.svg'
+export {default as me} from './me.jpg'
 export {default as union} from './union.svg' //heart complete
