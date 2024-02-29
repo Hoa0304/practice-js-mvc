@@ -8,5 +8,4 @@ constructor({
         this.year = year;
         this.storRate = storRate;
     }
-
 }
