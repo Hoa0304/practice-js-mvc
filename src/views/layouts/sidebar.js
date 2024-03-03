@@ -29,17 +29,17 @@ const SideBar = () => {
         </ul>
     </div>
     <div class="sidebar__final">
-    <ul>        
-    <li>
-    <a class="sidebar__final-text" href="#">About</a>
-    </li>
-    <li>
-    <a class="sidebar__final-text" href="#">Support</a>
-    </li>
-    <li>
-    <a class="sidebar__final-text" href="#">Terms & Condition</a>
-    </li>
-    </ul>
+        <ul>        
+            <li>
+                <a class="sidebar__final-text" href="#">About</a>
+            </li>
+            <li>
+                <a class="sidebar__final-text" href="#">Support</a>
+            </li>
+            <li>
+                <a class="sidebar__final-text" href="#">Terms & Condition</a>
+            </li>
+        </ul>
     </div>
 </section>
     `;

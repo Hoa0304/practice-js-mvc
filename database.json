@@ -1,0 +1,12 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "name": "Don’t Make Me think",
+            "author": "Steve Krug",
+            "year": "2000",
+            "img": "think.svg",
+            "storRate": "4.5"
+        }
+    ] 
+}

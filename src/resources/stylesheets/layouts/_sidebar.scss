@@ -2,7 +2,6 @@
 
 .sidebar {
     @include flex($direction: column,$align: start,$justify: space-between);
-    margin: 2% 0 0 2%;
     height: 100%;
     padding: 60px;
     background-color: white;

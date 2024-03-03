@@ -20,4 +20,9 @@ function card(Book) {
         </figure>
     `;
 }
+<<<<<<< Updated upstream
 export default card;
+=======
+
+export default card;
+>>>>>>> Stashed changes

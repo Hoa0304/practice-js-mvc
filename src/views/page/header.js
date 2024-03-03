@@ -1,4 +1,4 @@
-import {search, qr, me } from "../../resources/assets/image"
+import {search, qr, me,poly } from "../../resources/assets/image"
 
 const Header = () =>  {
     return `
@@ -12,14 +12,14 @@ const Header = () =>  {
                 <option value="fourth">Subjects</option>
             </select>
             <input 
-            type="text" 
-            placeholder="Search"
-            class="header__wrapper--input">
+                type="text" 
+                placeholder="Search"
+                class="header__wrapper--input">
             <button class="header__wrapper--search">
                 <img src="${search}" alt="search">
             </button>
             <button class="header__wrapper--qr">
-                <img src="${qr}" alt="">
+                <img src="${qr}" alt="qr">
             </button>
         </div>
         <div class="header__profile">
@@ -27,12 +27,17 @@ const Header = () =>  {
             <span class="header__profile--name">
                 Cẩm Hoa
             </span>
-            <select class="header__profile--option">
-                <option value="first">Profile</option>
-                <option value="second">Favourite</option>
-                <option value="third">Payments</option>
-                <option value="fourth">Logout</option>
-            </select>
+            <button class="header__profile--button">
+                <img src="${poly}" alt="">
+            </button>
+            <div class="header__profile--option">
+                <ul>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Favourite</a></li>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
         </div>
     </header>
     `;

@@ -1,3 +1,5 @@
+import Header from "./page/header";
+import Home from "./page/home";
 import Login from "./page/login";
 
 class BookView{
@@ -9,8 +11,7 @@ class BookView{
         this.container.classList.add('container')
         this.app.appendChild(this.container)
 
-
-        this.container.innerHTML += Login()
+        this.container.innerHTML += Home()
 
     }
 }

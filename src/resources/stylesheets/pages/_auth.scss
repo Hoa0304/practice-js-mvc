@@ -9,7 +9,7 @@
     @include flex($direction:column, $align:center, $justify: space-between);
     width: 30%;
     height: 88%;
-    background-color: white;
+    background-color: $fourth-color;
     border-radius: 10px;
     padding: 2% 4% 9% 4%;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
@@ -134,7 +134,7 @@
                     -webkit-appearance: none;
                     height: 10px;
                     width: 10px;
-                    background-color: white;
+                    background-color: $fourth-color;
                     border-radius: 2px;
                     cursor: pointer;
                     outline: none;
@@ -149,7 +149,7 @@
                 }
 
                 input[type="checkbox"]:hover {
-                    background-color: white;
+                    background-color: $fourth-color;
                 }
                 input[type="checkbox"]:checked {
                     background-color: $third-color;
@@ -162,7 +162,7 @@
                     content: "\f00c";
                     font-weight: 900;
                     font-size: 8px;
-                    color: white;
+                    color: $fourth-color;
                     padding-top: 1px;
                     @include tablet {
                         font-size: 12px;
@@ -178,7 +178,7 @@
             @include tablet {
                 @include font($primary-font,18px,700);
             }
-            @include color(white);
+            @include color($fourth-color);
         }
         &-reg {
             margin-top: 10px;
