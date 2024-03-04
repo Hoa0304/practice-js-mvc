@@ -1,2 +1,4 @@
-@use 'main';
-@use 'auth';
+@forward 'main';
+@forward 'auth';
+@forward 'home';
+@forward 'header';
