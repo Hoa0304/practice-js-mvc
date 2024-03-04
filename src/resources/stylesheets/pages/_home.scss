@@ -4,13 +4,36 @@
     overflow: hidden;
     height: 90%;
     margin: 2% 0 0 2%;
+    background-color: $fifth-color;
+    border-radius: 10px;
     @include flex();    
     &__sidebar {
         width: 20%;
-
     }
     &__main {
         width: 80%;
         padding: 2%;
+        &__top {
+            margin-bottom: 3%;
+        }
+        &__quote {
+            @include flex($justify: space-between);
+            height: 25%;
+            padding-right: 3%;
+        }
+        &__recommen {
+            padding-top: 3%;
+            &-primary {
+                @include font($secondary-font,28px,600);
+                color: $text;
+            }
+            &-text {
+                @include font($third-font,20px,400);
+                color: $text;
+                padding-top: 2%;
+                padding-bottom: 1%;
+            }
+        }
     }
+
 }
