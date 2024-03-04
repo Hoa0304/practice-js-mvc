@@ -1,11 +1,17 @@
 $primary-font: 'Inter-ExtraLight';
 $secondary-font: 'Inter-SemiBold';
+$third-font: 'Inter-Regular';
 
 $primary-color: #000;
 $secondary-color: #8A8A8A;
 $third-color: #FA7C54;
 $fourth-color: white;
+$fifth-color: #F3F3F7;
+$border-color: #DCDCDC;
+$background-color: #F7F7FA;
 $text: #4D4D4D;
+$gradient: linear-gradient(140.88deg, #EB5231 -29.15%, #571FCF 151.64%),
+linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 
 $small:429px;
 $mobiles:calc($small - 1px);
