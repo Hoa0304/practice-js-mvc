@@ -12,3 +12,9 @@
         url("../assets/font/Inter-SemiBold.ttf") format("truetype");
     font-display: swap;
 }
+@font-face {
+    font-family: 'Inter-Regular';
+    src: local('Inter-Regular'), local('Inter-Regular'),
+        url("../assets/font/Inter-Regular.ttf") format("truetype");
+    font-display: swap;
+}
