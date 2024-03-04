@@ -1,6 +1,55 @@
-@use "../abstracts/" as *;
+@use '../abstracts/' as *;
 
 .sidebar {
-    position: sticky;
-    
+    @include flex($direction: column,$align: start,$justify: space-between);
+    margin: 2% 0 0 2%;
+    height: 100%;
+    padding: 60px;
+    background-color: white;
+    border-radius: 10px 0px 0px 10px;
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+    &-logo {
+        img {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+    }
+    &__menu{
+        padding-bottom: 100%;
+        &--item {
+            @include flex($direction: column,$gap:20px);
+            li {
+                @include flex($align:center)
+            }
+            &-primary {
+                @include font($primary-font,16px,700);
+                @include color($text);
+                padding: 10px;
+                text-decoration: none;
+            }
+            &-text {
+                @include font($primary-font, 16px, 700);
+                @include color($secondary-color);
+                padding: 10px;
+                text-decoration: none;
+            }
+        }
+    }
+    &__final {
+        ul {
+            list-style: none;
+            @include flex($direction: column,$gap:10px);
+        }
+        &-text {
+            @include font($primary-font, 13px, 700);
+            @include color($secondary-color);
+            padding: 10px;
+            text-decoration: none;
+        } 
+    }
 }
