@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.mana {
+    overflow: hidden;
+    height: 90%;
+    margin: 2% 0 0 2%;
+    background-color: $fifth-color;
+    border-radius: 10px;
+    @include flex();
+    &__main {
+        width: 80%;
+        padding: 2%;
+        &-header {
+            margin-bottom: 2%;
+        }
+    }
+}
