@@ -1,9 +1,11 @@
+import Status from "../modules/status";
+
 const Form =  () => {
     return `
     <section class="wrap">
         <form action="popup" class="form">
-            <label for="image">Image Book</label>
-            <input type="file"class="form-file">
+            <label for="file" class="form-image">Choose photo</label>
+            <input type="file" class="form-file">
             <label for="name">Name Book</label>
             <input type="text" placeholder="Enter Name" class="form-input">
             <label for="author">Author Book</label>
@@ -25,15 +27,9 @@ const Form =  () => {
                 <input type="checkbox" name="audio" id="checked">
                 <label for="audio">Audio Book</label>
             </div>
-            <label for="status">Status</label><br/>
-            <select name="status" id="status" class="form-select">
-                <option value="shelf">In-Shelf</option>
-                <option value="borrowed">Borrowed</option>
-            </select>
-            <select name="address" id="address" class="form-select">
-                <option value="cs">CS A-15</option>
-                <option value="sriram">Sriram</option>
-            </select><br/>
+            <div class="form-status">
+            ${Status()}
+            </div>
             <button class="form-button">Add</button>
         </form>
     </section>
