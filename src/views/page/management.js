@@ -1,6 +1,7 @@
 import SideBar from "../layouts/sidebar";
 import Header from "../layouts/header";
 import Button from "../modules/button";
+import Table from "../components/table";
 
 const Mana = () => {
     return `
@@ -14,6 +15,7 @@ const Mana = () => {
             </div>
             <div class="mana__main-body">
             ${Button()}
+            ${Table()}
             </div>
         </div>
     </div>
