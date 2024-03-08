@@ -20,4 +20,5 @@ function card(Book) {
         </figure>
     `;
 }
+
 export default card;
