@@ -1,6 +1,4 @@
-import Header from "./page/header";
-import Home from "./page/home";
-import Login from "./page/login";
+import Mana from "./page/management";
 
 class BookView{
     constructor(){
@@ -11,7 +9,7 @@ class BookView{
         this.container.classList.add('container')
         this.app.appendChild(this.container)
 
-        this.container.innerHTML += Home()
+        this.container.innerHTML += Mana()
 
     }
 }

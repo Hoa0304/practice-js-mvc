@@ -7,14 +7,15 @@
     &__wrapper {
         @include flex($direction: row, $align: center, $justify: space-between);
         background-color: $fourth-color;
-        border-radius: 10px;
+        border-radius: 20px;
         box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.2);
         &--quick {
             height: 100%;
+            margin: 0;
             background-color: $background-color;
             border: none;
             text-align: center;
-            border-radius: 10px 0px 0px 10px;
+            border-radius: 20px 0px 0px 20px;
         }
         &--input {
             background-color: $fourth-color;
@@ -30,12 +31,14 @@
         &--qr {
             border-left: 1px solid $border-color;
         }
+        img {
+            width: 80%;
+        }
     }
     &__profile {
         @include flex($direction: row, $align: center, $justify: space-between);
         background-color: $fourth-color;
         border-radius: 30px;
-        height: 35px;
         box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
         &--image {
             border-radius: 50%;

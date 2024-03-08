@@ -1,0 +1,59 @@
+@use '../abstracts' as *;
+
+.title {
+    margin-left: 5%;
+    @include flex($gap:30px);
+    img {
+        width: 80px;
+        height: 110px;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    figcaption {
+        @include flex($direction: column,$justify: center);
+        p {
+            padding-top: 10px;
+            @include font($primary-font, 9px, 600);
+        }
+    }
+}
+.name {
+    @include font($primary-font,17px, 600);
+}
+.extra {
+    @include font($primary-font, 12px, 600);
+}
+.category {
+    @include flex($direction: column,$justify: center);
+    .extra {
+        padding-top: 15px;
+    }
+}
+.availability {
+    @include flex($direction: column,$align: flex-start,$gap: 10px);
+    &__wrap {
+        @include flex($direction: row,$gap: 7px);
+    }
+}
+.status {
+    @include flex($direction: column,$align: flex-start,$gap: 10px);
+    span {
+        width: 60%;
+        height: 22px;
+        background-color: $status;
+        color: $fourth-color;
+        border-radius: 6px;
+        @include flex($align:center,$justify:center);
+    }
+    &__location {
+        @include flex($direction: row,$align:end,$gap: 7px);
+    }
+}
+button {
+    width: 40%;
+    height: 25px;
+    background-color: $fourth-color;
+    border: 1px solid $primary-text;
+    color: $primary-text;
+    border-radius: 6px;
+}
