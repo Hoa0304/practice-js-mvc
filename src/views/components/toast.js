@@ -1,8 +1,8 @@
 function Toast(type, msg) {
     const icons = {
-      error: 'ti-na',
-      info: 'ti-info-alt',
-      warning: 'ti-alert',
+      error: 'fa-solid fa-circle-exclamation',
+      info: 'fa-solid fa-square-check',
+      warning: 'fa-solid fa-triangle-exclamation',
     };
   
     const icon = icons[type];
