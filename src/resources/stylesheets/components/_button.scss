@@ -15,8 +15,10 @@
         background-color: $fourth-color;
         border-radius: 20px;
         border: 1px solid $border-color;
+        padding: 1% 0 1% 5%;
         &-arrow {
             background-color: $fourth-color;
+            width: 30%;
         }
         &-option {
             display: none;
@@ -25,6 +27,7 @@
     &-create {
         text-align: center;
         width: 40%;
+        height: 100%;
         background-color: $third-color;
         color: $fourth-color;
     }
