@@ -49,12 +49,12 @@ const Login = () => {
         </div>
         <a class="wrapper__form__question-pass" href="#">Forgot password?</a>
       </div>
-      <button class="wrapper__form-log">Login</button>
+      <button class="wrapper__form-log" type="submit">Login</button>
       </form>
       <div class="wrapper__form__bottom">
         <span class="wrapper__form__bottom--text">
             New User?
-            <a class="wrapper__form__bottom--text-link" href="./register.js">Register Here</a>
+            <a class="wrapper__form__bottom--text-link"  id= "reg" href="/register">Register Here</a>
         </span>
         <span class="wrapper__form__bottom--text">
             Use as Guest 
