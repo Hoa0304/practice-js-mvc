@@ -23,6 +23,7 @@ class BookView{
 
         this.router.changeRoute();
     }
+    
     login(users) {
         this.users = users;
         const formLogin = document.querySelector('.wrapper__form-log');
