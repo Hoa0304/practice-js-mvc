@@ -5,14 +5,18 @@ class BookController {
         this.handleLogin()
         this.view.toggleOptions()
         this.view.logout()
-        this.view.handleForm()
+        // this.view.handleForm()
+        this.handleDisplayData()
     }
     async handleLogin(){
         const user = await this.service.getUsers()
         this.view.login(user)
     }
 
-    
+    async handleDisplayData() {
+        const book = await this.service.getBooks()
+        this.view.displayData(book)
+    }
 }
 
 export default BookController;

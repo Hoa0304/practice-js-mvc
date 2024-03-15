@@ -5,6 +5,7 @@ import Register from "./page/register";
 import Home from "./page/home";
 import Router from "../router/Router";
 import Form from "./components/form";
+import TBody from "./modules/tableBody";
 
 class BookView{
     constructor(){
@@ -16,6 +17,7 @@ class BookView{
         this.container = document.createElement('div');
         this.container.classList.add('container')
         this.app.appendChild(this.container)
+        
         // add toast container
         this.toastList = document.createElement('ul');
         this.toastList.classList.add('notifications');
@@ -76,12 +78,26 @@ class BookView{
             window.location.href = '/';
         })
     }
-    handleForm() {
-        const form = document.querySelector('.browser-create')
-        form.addEventListener('click',(e) => {
-            window.location.pathname = '/form';
-        })
+
+    displayData(books) {
+        this.books = books;
+        console.log(books)
+        const ttable = document.querySelector('.table__body')
+        let html = ""
+        this.books.forEach(book => {
+            html += TBody(book)
+            
+        });
+
+        ttable.innerHTML = html
+        console.log(html)
     }
+    // handleForm() {
+    //     const form = document.querySelector('.browser-create')
+    //     form.addEventListener('click',(e) => {
+    //         window.location.pathname = '/form';
+    //     })
+    // }
 }
 
 export default BookView;

@@ -1,36 +1,36 @@
-import { think, tick, trac} from '../../resources/assets/image';
+import { sub, trac } from '../../resources/assets/image';
 
-const TBody = () => {
-    return `
+const TBody = (book) => {
+  return `
     <tr>
         <td>
             <figure class="title">
-                <img src="${think}" alt="">
+                <img src="${book.image}" alt="">
                 <figcaption>
-                    <span class="name">Don’t Make Me Think </span><br>
-                    <span class="extra">Steve Krug, 2000</span>
+                    <span class="name">${book.name} </span><br>
+                    <span class="extra">$${book.author}, ${book.year}</span>
                     <p>Second Edition</p>
                 </figcaption>
             </figure>
         </td>
         <td>
             <div class="category">
-                <span class="name">Computer Science</span>
+                <span class="name">${book.category}</span>
                 <span class="extra">UX Design</span>
             </div>
         </td>
         <td>
             <div class="availability">
                 <figure class="availability__wrap">
-                    <img src="${tick}" alt="tick">
+                    <img src="${sub}" alt="tick">
                     <figcaption class="extra">Hard Copy</figcaption>
                 </figure>
                 <figure class="availability__wrap">
-                    <img src="${tick}" alt="tick">
+                    <img src="${sub}" alt="tick">
                     <figcaption class="extra">E - Book</figcaption>
                 </figure>
                 <figure class="availability__wrap">
-                    <img src="${tick}" alt="tick">
+                    <img src="${sub}" alt="tick">
                     <figcaption class="extra">Audio book</figcaption>
                 </figure>
             </div>
@@ -51,7 +51,7 @@ const TBody = () => {
             <button class="extra">Edit</button>
         </td>
     </tr>
-    `
-}
+    `;
+};
 
 export default TBody;
