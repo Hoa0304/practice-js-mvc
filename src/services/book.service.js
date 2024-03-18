@@ -18,7 +18,6 @@ class BookService {
           }catch (error) {
             createToast('error', error);
           }
-        
     }
 }
 
