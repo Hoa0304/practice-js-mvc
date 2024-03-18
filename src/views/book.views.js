@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import Login from "./page/login";
-=======
 import { createToast } from "./components/handleToast";
 import Login from "./page/login";
 import Mana from "./page/management";
@@ -8,7 +5,6 @@ import Register from "./page/register";
 import Home from "./page/home";
 import Router from "../router/Router";
 import Form from "./components/form";
->>>>>>> 26e5925 (router(#22))
 
 class BookView{
     constructor(){
@@ -25,10 +21,6 @@ class BookView{
         this.toastList.classList.add('notifications');
         this.app.appendChild(this.toastList);
 
-<<<<<<< HEAD
-
-        this.container.innerHTML += Login()
-=======
         this.router.changeRoute();
     }
     login(users) {
@@ -57,7 +49,6 @@ class BookView{
         this.router.addRoute('/register', Register());
         this.router.addRoute('/home', Home());
         this.router.addRoute('/form', Form());
->>>>>>> 26e5925 (router(#22))
 
     }
     toggleOptions(){
