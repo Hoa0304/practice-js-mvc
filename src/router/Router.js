@@ -1,29 +1,64 @@
 class Router {
-  constructor(root) {
+  constructor() {
     this.routes = [];
     this.currentRoute = null;
   }
-  
-  addRoute(path, component) {
-    this.routes.push({ path, component });
+
+  // Define a new route with a regular expression pattern
+  define(path, element, controller, view, service, params = []) {
+    // Convert path to a regex pattern
+    const pattern = new RegExp(
+      '^' + path.replace(/:[^\s/]+/g, '([\\w-]+)') + '$',
+    );
+
+    // Store route with pattern and element
+    this.routes.push({ pattern, element, params, controller, view, service });
   }
-  
-  changeRoute() {
+
+  // Listen for changes in the URL
+  listen() {
     const path = window.location.pathname;
-    const route = this.routes.find((route) => route.path === path);
+
+    // Find matching route
+    const route = this.findRoute();
+
     if (route) {
-      const { component } = route;
-      const container = document.querySelector('.container');
-      if (typeof component === 'string') {
-        container.innerHTML = component;
+      const params = this.extractParams(path, route.pattern, route.params);
+      const element =
+        typeof route.element === 'function'
+          ? route.element(params)
+          : route.element;
+
+      const root = document.getElementById('root');
+
+      if (typeof element === 'string') {
+        root.innerHTML = element;
       } else {
-        container.innerHTML = '';
-        if (component) {
-          container.appendChild(component);
-        }
+        root.appendChild(element);
       }
+    } else {
+      console.error('No matching route found.');
     }
   }
+
+  findRoute() {
+    const path = window.location.pathname;
+    return this.routes.find((route) => route.pattern.test(path));
+  }
+
+  // Extract parameters from the path
+  extractParams(path, pattern, paramNames) {
+    const matches = path.match(pattern);
+    const params = {};
+
+    if (matches && paramNames.length === matches.length - 1) {
+      paramNames.forEach((name, index) => {
+        params[name] = matches[index + 1];
+      });
+    }
+
+    return params;
+  }
 }
-  
+
 export default Router;
