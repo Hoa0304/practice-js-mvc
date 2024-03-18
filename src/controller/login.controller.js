@@ -1,11 +1,11 @@
-class BookController {
+class LoginController {
     constructor(view, service) {
         this.view = view
         this.service = service
         this.handleLogin()
         this.view.toggleOptions()
         this.view.logout()
-        this.view.handleForm()
+        this.handleDisplayData()
     }
     async handleLogin(){
         const user = await this.service.getUsers()
@@ -15,4 +15,4 @@ class BookController {
     
 }
 
-export default BookController;
+export default LoginController;
