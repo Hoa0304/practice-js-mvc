@@ -4,7 +4,8 @@
     margin: auto;
     height: 100%;
     @include flex($justify:center,$align:center);
-    .form {
+    .form,
+    .editForm {
         @include flex($direction: column,$justify:center,$gap:8px);
         background-color: $fifth-color;
         width: 30%;
@@ -17,6 +18,13 @@
         &-file {
             display: none;
         }
+        .btncancel{
+            margin-top: 0;
+            padding: 0;
+            height: 20px;
+            width: 20%;
+            align-self: center;
+        }
         &-image {
             color: $fourth-color;
             width: 35%;
@@ -24,7 +32,7 @@
             background-color: $third-color;
             align-self: flex-end;
             text-align: center;
-            padding-top: 8px;
+            padding: 8px;
             border-radius: 20px;
             cursor: pointer;
         }
@@ -33,6 +41,7 @@
             border: none;
             border-bottom: 2px solid $primary-text;
             border-radius: 20px;
+            outline: none;
         }
         &-box {
             @include flex($align: center);
@@ -49,6 +58,7 @@
                 outline: none;
                 border: 1px solid $secondary-color;
                 border-radius: 2px;
+                margin-bottom: 4px;
             }
             input[type="checkbox"]:hover {
                 background-color: $third-color;

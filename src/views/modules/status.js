@@ -7,11 +7,7 @@ const Status = () => {
             <option value="borrowed">Borrowed</option>
         </select>
         <i class="fa-solid fa-chevron-down icon"></i>
-        <select name="address" id="address">
-            <option value="cs">CS A-15</option>
-            <option value="sriram">Sriram</option>
-        </select>
-        <i class="fa-solid fa-chevron-down icon"></i>
+        <input type="text" name="customer" placeholder="Customer Name" id="address">
     </section>
     `
 }
