@@ -2,7 +2,7 @@ import { sub, trac } from '../../resources/assets/image';
 
 const TBody = (book) => {
   return `
-    <tr>
+    <tr class="bookitem" data-id="${book.id}">
         <td>
             <figure class="title">
                 <img src="${book.image}" alt="">
@@ -47,8 +47,8 @@ const TBody = (book) => {
             </div>
         </td>
         <td>
-            <button class="extra">Delete</button>
-            <button class="extra">Edit</button>
+            <button class="extra deletebtn">Delete</button>
+            <button class="extra editbtn">Edit</button>
         </td>
     </tr>
     `;

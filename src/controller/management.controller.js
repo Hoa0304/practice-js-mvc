@@ -4,6 +4,7 @@ class ManagementController {
         this.service = service;
         this.view.toggleForm();
     }
+
 }
 
 export default ManagementController
