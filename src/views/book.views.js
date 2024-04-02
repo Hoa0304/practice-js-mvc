@@ -15,6 +15,7 @@ import HomeService from "../services/home.service";
 import ManagenmentView from "./management.view";
 import ManagementService from "../services/management.service";
 import ManagementController from "../controller/management.controller";
+import EditForm from "./components/editForm";
 
 class BookView{
     constructor(){
@@ -37,8 +38,6 @@ class BookView{
         this.router.define('/management', Mana(), ManagementController, ManagenmentView, ManagementService)
         this.router.define('/register', Register())
         this.router.define('/home', Home(), HomeController, HomeView, HomeService)
-        this.router.define('/form', Form())   
-
         this.router.listen()
     }
     toggleOptions(){
@@ -87,6 +86,42 @@ class BookView{
 
         ttable.innerHTML = html
     }
+    toggleFormEdit(books) {
+        this.books = books;
+        const wrapForm = document.querySelector('.mana__editForm');
+        const formEdit = document.querySelector('.editForm');
+        const buttonForm = document.querySelectorAll('.editbtn');
+        const buttoncancel = document.querySelector(".btncancel");
+        buttonForm.forEach((btn)=>{
+            btn.addEventListener('click', (e) => {
+                wrapForm.classList.toggle('hidden');
+                const parenttr = btn.closest('.bookitem');
+                const id = parenttr.getAttribute('data-id');
+                this.books.forEach((book) => {
+                    if(book.id === (id)){
+                        wrapForm.innerHTML= EditForm(book);
+                        const btncancel = document.querySelector(".btncancel")
+                        btncancel.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            wrapForm.classList.toggle('hidden');
+                        })
+                    }
+                });
+            });
+        })  
+    }
+    bindDelete(handle) {
+        const deleteBtn = document.querySelectorAll('.deletebtn')
+        deleteBtn.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const parent = btn.closest('.bookitem');
+                const id = parent.getAttribute('data-id');
+                handle(id)
+                this.displayData(this.books)
+            })
+        })
+    }
+
 }
 
 export default BookView;
