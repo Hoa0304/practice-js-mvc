@@ -5,6 +5,18 @@ import Register from "./page/register";
 import Home from "./page/home";
 import Router from "../router/Router";
 import Form from "./components/form";
+import TBody from "./modules/tableBody";
+import Card from "./modules/card";
+import LoginController from "../controller/login.controller";
+import LoginView from "./login.view";
+import LoginService from "../services/login.service";
+import HomeController from "../controller/home.controller";
+import HomeView from "./home.view";
+import HomeService from "../services/home.service";
+import ManagenmentView from "./management.view";
+import ManagementService from "../services/management.service";
+import ManagementController from "../controller/management.controller";
+import EditForm from "./components/editForm";
 
 class BookView{
     constructor(){
@@ -17,39 +29,22 @@ class BookView{
         this.container.classList.add('container')
         this.app.appendChild(this.container)
         // add toast container
-        this.toastList = document.createElement('ul');
-        this.toastList.classList.add('notifications');
-        this.app.appendChild(this.toastList);
-
-        this.router.changeRoute();
+        this.toastList = document.createElement('ul')
+        this.toastList.classList.add('notifications')
+        this.app.appendChild(this.toastList)
+        
+        let { controller, service, view } = this.router.findRoute()
+        if (view) view = new view()
+        if (service) service = new service()
+        if (controller) controller = new controller(view, service)
     }
-    login(users) {
-        this.users = users;
-        const formLogin = document.querySelector('.wrapper__form-log');
-        formLogin?.addEventListener('click', (e) => {
-            e.preventDefault();
-            const email = document.querySelector('#email').value
-            const password = document.querySelector('#password').value
-            if (email === '') {
-                createToast('warning','Please enter a email')
-            }
-            if (password === '') {
-                createToast('warning','Please enter a password')
-            }
-            const foundUser = this.users.find(
-                (user) => email === user.email && password === user.password);
-            if (foundUser) {
-                window.location.href = '/home';
-            }
-        })
-    }
+    
     initRoute() {
-        this.router.addRoute('/', Login());
-        this.router.addRoute('/management', Mana());
-        this.router.addRoute('/register', Register());
-        this.router.addRoute('/home', Home());
-        this.router.addRoute('/form', Form());
-
+        this.router.define('/', Login(), LoginController, LoginView, LoginService)
+        this.router.define('/management', Mana(), ManagementController, ManagenmentView, ManagementService)
+        this.router.define('/register', Register())
+        this.router.define('/home', Home(), HomeController, HomeView, HomeService)
+        this.router.listen()
     }
     toggleOptions(){
         const optionss = document.querySelector('.header__profile--button')
@@ -81,6 +76,42 @@ class BookView{
             window.location.pathname = '/form';
         })
     }
+    toggleFormEdit(books) {
+        this.books = books;
+        const wrapForm = document.querySelector('.mana__editForm');
+        const formEdit = document.querySelector('.editForm');
+        const buttonForm = document.querySelectorAll('.editbtn');
+        const buttoncancel = document.querySelector(".btncancel");
+        buttonForm.forEach((btn)=>{
+            btn.addEventListener('click', (e) => {
+                wrapForm.classList.toggle('hidden');
+                const parenttr = btn.closest('.bookitem');
+                const id = parenttr.getAttribute('data-id');
+                this.books.forEach((book) => {
+                    if(book.id === (id)){
+                        wrapForm.innerHTML= EditForm(book);
+                        const btncancel = document.querySelector(".btncancel")
+                        btncancel.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            wrapForm.classList.toggle('hidden');
+                        })
+                    }
+                });
+            });
+        })  
+    }
+    bindDelete(handle) {
+        const deleteBtn = document.querySelectorAll('.deletebtn')
+        deleteBtn.forEach((btn) => {
+            btn.addEventListener('click', (e) => {
+                const parent = btn.closest('.bookitem');
+                const id = parent.getAttribute('data-id');
+                handle(id)
+                this.displayData(this.books)
+            })
+        })
+    }
+
 }
 
 export default BookView;

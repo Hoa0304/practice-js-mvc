@@ -21,3 +21,11 @@ select {
     pointer-events: none;     
     left: -30px;
 }
+
+#address {
+    padding: 2% 5%;
+    border: none;
+    border-bottom: 2px solid $primary-text;
+    border-radius: 20px;
+    outline: none;
+}
