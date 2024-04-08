@@ -1,7 +1,7 @@
-import { logo,off } from "../../resources/assets/image";
+import { logo, off } from '../../resources/assets/image';
 
 const Register = () => {
-return `
+  return `
 <div class="registration">
     <div class="wrapper">
         <figure class= "wrapper__top">
@@ -16,11 +16,12 @@ return `
             </span>
         </figcaption>
     </figure>
-    <form class="wrapper__form" method="post">
+    <form class="wrapper__form formregist" >
     <div class="wrapper__form__box">
     <label for="reg">Reg No.</label>
     <input
-        type="reg"
+        name="name"
+        type="text"
         placeholder="Your Reg. No."
         class="wrapper__form__box-input"
         id="reg"
@@ -30,6 +31,7 @@ return `
     <div class="wrapper__form__box">
         <label for="email">College Email ID</label>
         <input
+            name="email"
             type="email"
             placeholder="Your email"
             class="wrapper__form__box-input"
@@ -41,6 +43,7 @@ return `
         <label for="password">Password</label>
         <div class = "passwordfield">
         <input
+            name="password"
             type="password"
             placeholder="Your password"
             class="wrapper__form__box-input"
@@ -57,6 +60,7 @@ return `
         <div class = "passwordfield">
         <input
             type="password"
+            name="password"
             placeholder="Confirm Password"
             class="wrapper__form__box-input"
             id="confirm"

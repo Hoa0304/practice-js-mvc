@@ -1,17 +1,16 @@
-function card(Book) {
+const Card = ( book ) => {
     return `
         <figure class="card">
-            <img src="${Book.img}">
+            <img src="${book.image}">
             <figcaption class="card__text">
                 <span class="card__text-primary">
-                    ${Book.name}
+                    ${book.name}
                 </span>
-                <br>
                 <span class="card__text-secondary">
-                    ${Book.author},${Book.year}
+                    ${book.author}, ${book.year}
                 </span>
                 <p class="card__text--evaluate">
-                    ${Book.storRate}
+                    4.5
                     <span class="card__text--evaluate-extra">
                         /5
                     </span>
@@ -21,4 +20,4 @@ function card(Book) {
     `;
 }
 
-export default card;
+export default Card;
