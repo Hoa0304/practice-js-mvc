@@ -1,7 +1,7 @@
 @use '../abstracts' as *;
 
 .browser {
-    width: 20%;
+    width: 19%;
     @include flex($justify: space-between);
     @include font($primary-font,13px,600);
     button {

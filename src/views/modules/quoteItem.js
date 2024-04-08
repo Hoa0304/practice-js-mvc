@@ -1,11 +1,11 @@
 const QuoteItem = (content,author) => {
     return `
-    <section class="quote">
+    <section class="quote hidden">
         <span class="quote--text">
             Today’s Quote
         </span>
         <p class="quote-status">
-            ${content}
+            ${content}  
         </p>
         <span class="quote--author">
             ${author}

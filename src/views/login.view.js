@@ -1,3 +1,5 @@
+import { createToast } from "./components/handleToast";
+
 class LoginView {
   constructor() {}
 
@@ -6,12 +8,7 @@ class LoginView {
     const formLogin = document.querySelector('.wrapper__form-log')
     const accepts = document.querySelectorAll('input[type="checkbox"]:checked')
 
-    if (accepts?.length < 1) {
-        createToast('warning', 'You need to agree policy')
-        return
-    }
-
-    formLogin?.addEventListener('click', (e) => {
+    formLogin.addEventListener('click', (e) => {
       e.preventDefault();
       const email = document.querySelector('#email').value;
       const password = document.querySelector('#password').value;

@@ -8,7 +8,7 @@
     padding: 1% 2%;
     justify-content: space-around;
     flex-direction: column;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     &--text {
         @include font($third-font,18px,500);
         color: $fourth-color;

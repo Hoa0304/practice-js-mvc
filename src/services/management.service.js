@@ -4,21 +4,6 @@ class ManagementService {
     constructor() {
         this.books = []
     }
-
-    async deleteBooks(id) {
-        try {
-            let { data } = await api.delete(`/books/${id}`);
-            if (data) {
-                this.books = this.books.filter((book) => 
-                
-                {
-                    return book.id!== id
-                })
-            }
-        } catch (error) {
-            createToast('error', error);
-        }
-    }
     async getBooks() {
         try {
           let { data } = await api.get('/books');

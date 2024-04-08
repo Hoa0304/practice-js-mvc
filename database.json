@@ -1,12 +1,68 @@
 {
-    "books": [
-        {
-            "id": 1,
-            "name": "Don’t Make Me think",
-            "author": "Steve Krug",
-            "year": "2000",
-            "img": "think.svg",
-            "storRate": "4.5"
-        }
-    ] 
+  "books": [
+    {
+      "id": "3",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    },
+    {
+      "id": "2",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    }
+  ],
+  "users": [
+    {
+      "name": "Cẩm Hoa",
+      "email": "chtran03042004@gmail.com",
+      "password": "1",
+      "id": "27e2"
+    },
+    {
+      "id": "97c3",
+      "name": "Hoa Tran ",
+      "email": "chtran03042004@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "a93b",
+      "name": "NguyenDat",
+      "email": "tranthicamhoa2k4s@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "e83f",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "760a",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "aeb5",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    }
+  ]
 }

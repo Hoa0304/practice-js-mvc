@@ -13,6 +13,7 @@ class LoginService {
             if (data) {
                 data = await data.map((user) => new User(user));
                 this.users = data;
+                console.log(this.users);
                 return this.users;
             }
         } catch (error) {

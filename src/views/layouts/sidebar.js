@@ -10,13 +10,13 @@ const SideBar = () => {
         <ul class="sidebar__menu--item">
             <li>
                 <img src="${home}" alt="home">
-                <a class="sidebar__menu--item-primary" href="#">
+                <a class="sidebar__menu--item-primary" href="/home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
                 <img src="${sp}" alt="mana">
-                <a class="sidebar__menu--item-text" href="#">
+                <a class="sidebar__menu--item-text" href="/management">
                     <span>Management</span>
                 </a>
             </li>
