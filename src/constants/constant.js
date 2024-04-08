@@ -13,4 +13,8 @@ const ACCOUNT = [
     'Logout'
 ]
 
-export { BROWSER, ACCOUNT };
+const QUOTE = [
+    '\“There is more treasure in books than in all the pirate’s loot on Treasure Island.\”',
+    '-Walt Disney'
+]
+export { BROWSER, ACCOUNT, QUOTE };

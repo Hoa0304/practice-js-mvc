@@ -1,4 +1,5 @@
 import { poly } from "../../resources/assets/image";
+import { BROWSER } from "../../constants/constant";
 
 const Button= () => {
     return `
@@ -10,11 +11,9 @@ const Button= () => {
             </button>
             <div class="browser__wrapper-option">
                 <ul>
-                    <li><a href="#">Engineering</a></li>
-                    <li><a href="#">Medical</a></li>
-                    <li><a href="#">Arts & Science</a></li>
-                    <li><a href="#">Architecture</a></li>
-                    <li><a href="#">Law</a></li>
+                    ${BROWSER.map(option => `
+                    <li><a href="#">${option}</a></li>
+                    `).join('')}
                 </ul>
             </div>
         </div>

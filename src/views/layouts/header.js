@@ -1,3 +1,4 @@
+import { ACCOUNT } from "../../constants/constant";
 import {search, qr, me,poly } from "../../resources/assets/image"
 
 const Header = () =>  {
@@ -30,12 +31,11 @@ const Header = () =>  {
             <button class="header__profile--button">
                 <img src="${poly}" alt="">
             </button>
-            <div class="header__profile--option">
+            <div class="header__profile--option hidden">
                 <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Favourite</a></li>
-                    <li><a href="#">Payments</a></li>
-                    <li><a href="#">Logout</a></li>
+                    ${ACCOUNT.map(option => `
+                    <li><a href="#">${option}</a></li>
+                    `).join('')}
                 </ul>
             </div>
         </div>

@@ -7,7 +7,13 @@
     height: 100%;
     border-radius: 10px;
     padding: 1% 2%;
+<<<<<<< HEAD
     @include flex($direction: column, $justify: space-around);
+=======
+    justify-content: space-around;
+    flex-direction: column;
+    transition: opacity 0.5s ease-in-out;
+>>>>>>> ec906f5 (update (#33))
     &--text {
         @include font($third-font,18px,500);
         color: $fourth-color;
@@ -34,4 +40,32 @@
             background-color: $fourth-color;
         }
     }
+<<<<<<< HEAD
 }
+=======
+    &:nth-child(2) {
+        .quote--index-circle:nth-child(2) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+    &:nth-child(3) {
+        .quote--index-circle:nth-child(3) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+    &:nth-child(4) {
+        .quote--index-circle:nth-child(4) {
+            background-color: $fourth-color;
+        }
+        .quote--index-circle:nth-child(1) {
+            background-color: transparent;
+        }
+    }
+}
+>>>>>>> ec906f5 (update (#33))
