@@ -1,11 +1,13 @@
-import Status from "../modules/status";
+import Status from '../modules/status';
 
-const Form =  () => {
-    return `
+const Form = () => {
+  return `
     <section class="wrap">
         <form action="popup" class="form">
-            <label for="file" class="form-image">Choose photo</label>
-            <input type="file" class="form-file">
+             <div class = "wrap-selectFile form-file">
+             <input type="file"> 
+             <label for="file" class="form-image">Choose photo</label>
+             </div>
             <label for="name">Name Book</label>
             <input type="text" placeholder="Enter Name" class="form-input">
             <label for="author">Author Book</label>
@@ -33,7 +35,7 @@ const Form =  () => {
             <button class="form-button">Add</button>
         </form>
     </section>
-    `
-}
+    `;
+};
 
 export default Form;

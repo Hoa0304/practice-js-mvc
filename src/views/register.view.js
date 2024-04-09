@@ -26,9 +26,15 @@ class RegisterView {
       e.preventDefault();
       if (this.checkValidForm(formrg)) {
         const dtb = collectData(formrg);
-        const usern = new User(dtb);
-        console.log(usern);
-        handle(usern);
+        const pw = document.querySelector('#password');
+        const confirm = document.querySelector('#confirm');
+        if (pw === confirm) {
+          const usern = new User(dtb);
+          console.log(usern);
+          handle(usern);
+        } else {
+          createToast('warning', 'Confirm passwords do not match');
+        }
         // clearForm(formrg);
       }
     });
