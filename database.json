@@ -63,6 +63,12 @@
       "name": "NguyenDat",
       "email": "chtran03042004@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "3918",
+      "name": "HoaNgu",
+      "email": "hoa@gmail.com",
+      "password": "hoa12345"
     }
   ]
 }
