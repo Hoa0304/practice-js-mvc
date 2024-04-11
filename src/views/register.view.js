@@ -1,5 +1,5 @@
 import User from '../model/users.model';
-import { clearForm, collectData } from '../ultis/validate';
+import { clearForm, collectData } from '../helper/validate';
 import { createToast } from './components/handleToast';
 
 class RegisterView {
