@@ -1,8 +1,10 @@
-import {search, qr, me,poly } from "../../resources/assets/image"
+import { ACCOUNT } from '../../constants/constant';
+import { search, qr, me, poly } from '../../resources/assets/image';
 
-const Header = () =>  {
-    return `
+const Header = () => {
+  return `
     <header class="header">
+        <span class="menu-toggle">&equiv;</span>
         <div class="header__wrapper">
             <select class="header__wrapper--quick">
                 <option value="">All</option>
@@ -32,10 +34,11 @@ const Header = () =>  {
             </button>
             <div class="header__profile--option">
                 <ul>
-                    <li><a href="#">Profile</a></li>
-                    <li><a href="#">Favourite</a></li>
-                    <li><a href="#">Payments</a></li>
-                    <li><a href="#">Logout</a></li>
+                    ${ACCOUNT.map(
+                      (option) => `
+                    <li><a href="#">${option}</a></li>
+                    `,
+                    ).join('')}
                 </ul>
             </div>
         </div>
