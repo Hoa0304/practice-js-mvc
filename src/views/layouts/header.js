@@ -32,7 +32,7 @@ const Header = () => {
             <button class="header__profile--button">
                 <img src="${poly}" alt="">
             </button>
-            <div class="header__profile--option">
+            <div class="header__profile--option hidden">
                 <ul>
                     ${ACCOUNT.map(
                       (option) => `

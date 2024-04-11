@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+.mana {
+    position: relative;
+    overflow: hidden;
+    height: 90%;
+    margin: 2% 0 0 2%;
+    background-color: $fifth-color;
+    border-radius: 10px;
+    @include flex();
+    &__form,
+    &__editForm{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        
+    }
+    &__main {
+        width: 80%;
+        padding: 2%;
+        &-header {
+            margin-bottom: 2%;
+        }
+    }
+}
