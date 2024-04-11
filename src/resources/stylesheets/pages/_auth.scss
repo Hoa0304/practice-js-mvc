@@ -6,7 +6,7 @@
     height: 100%;
 }
 .wrapper {
-    @include flex($direction:column, $align:center, $justify: space-between);
+    @include flex($direction:column, $align:center,$gap: 15px);
     width: 30%;
     height: 88%;
     background-color: $fourth-color;
@@ -14,12 +14,12 @@
     padding: 2% 4% 9% 4%;
     box-shadow: 0px 0px 20px 1px rgba(0, 0, 0, 0.5);
     @include mobile {
-        width: 70%;
-        height: 85%;
+        width: 80%;
+        height: 75%;
     }
     @include tablet {
-        width: 60%;
-        height: 70%;
+        width: 50%;
+        height: 90%;
     }
     &__top {
         width: 95%;
@@ -27,6 +27,12 @@
         @include flex($direction:column,$align: center,$gap:40px);
         &-logo{
             width:50%;
+        }
+        img {
+            width: 40%;
+            @include tablet {
+                width: 40%;
+            }
         }
         @include mobile {
             margin-top: 10px;
@@ -43,14 +49,17 @@
         &-primary {
             @include font($primary-font,16px,700);
             @include tablet {
-                @include font($primary-font,20px,700);
+                @include font($primary-font,14px,700);
+            }
+            @include mobile {
+                @include font($primary-font,12px,700);
             }
         }
         &-secondary {
             @include font($primary-font,13px,400);
             color: $secondary-color;
             @include tablet {
-                @include font($primary-font,17px,700);
+                @include font($primary-font,12px,700);
             }
         }
     }
@@ -59,10 +68,9 @@
         gap: 10px;
         margin-top: 30px;
         @include flex($direction:column);
-        @include font($primary-font,13px,700);
         @include mobile {
             width: 85%;
-            margin-top: 20px;
+            margin-top: 0;
         }
         @include tablet {
             width: 90%;
@@ -78,9 +86,6 @@
             @include flex($direction:column);
             gap: 3px;
             @include font($secondary-font,14px,400);
-            @include tablet {
-                @include font($secondary-font,18px,400);
-            }
             color: $text;
             &-input{
                 width: 100%;
@@ -91,9 +96,6 @@
             }
             &-input::placeholder{
                 @include font($primary-font,13px,700);
-                @include tablet {
-                    @include font($primary-font,17px,700);
-                }
             }
             .passwordfield{
                 width: 100%;
@@ -121,7 +123,7 @@
             @include flex($justify:space-between,$align:center);
             @include font($primary-font,12px,600);
             @include tablet {
-                @include font($primary-font,17px,700);
+                @include font($primary-font,11px,700);
             }
             &-pass{
                 color: $primary-color;
@@ -141,8 +143,8 @@
                     outline: none;
                     border: 1px solid $secondary-color;
                     @include tablet {
-                        width: 15px;
-                        height: 15px;
+                        width: 10px;
+                        height: 10px;
                     }
                 }
                 label {
@@ -166,7 +168,7 @@
                     color: $fourth-color;
                     padding-top: 1px;
                     @include tablet {
-                        font-size: 12px;
+                        font-size: 10px;
                     }
                 }
 
@@ -176,10 +178,11 @@
         &-reg {
             @include button(100%,40px,$third-color,5px,none,0px);
             @include font($primary-font,15px,700);
-            @include tablet {
-                @include font($primary-font,18px,700);
-            }
             @include color($fourth-color);
+            @include mobile {
+                @include button(100%,30px,$third-color,5px,none,0px);
+                @include font($primary-font,12px,700);
+            }
         }
         &-reg {
             margin-top: 10px;
@@ -193,17 +196,16 @@
             }
             &--text {
                 @include font($primary-font,11px,600);
-                @include tablet {
-                    @include font($primary-font,15px,700);
-                }
                 &-link{
                     color: $primary-color;
                     text-decoration: underline;
                 }
+                @include mobile {
+                    @include font($primary-font,10px,600);
+                }
             }
             @include mobile {
                 width: 85%;
-                margin-bottom: 50px;
             }
         }
         &__bottom {
