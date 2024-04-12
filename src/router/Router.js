@@ -38,6 +38,7 @@ class Router {
       }
     } else {
       console.error('No matching route found.');
+      window.location.href = '/';
     }
   }
 
