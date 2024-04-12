@@ -1,6 +1,46 @@
-import { sub, trac } from '../../resources/assets/image';
+import { sub, tick, trac, union } from '../../resources/assets/image';
 
 const TBody = (book) => {
+  function checkit(item) {
+    switch (item) {
+      case 'hard':
+        if (book.hardCopy) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'ebook':
+        if (book.eBook) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'audio':
+        if (book.audioBook) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'stt':
+        if (book.borrowed) {
+          return 'Borrowed';
+        } else {
+          return 'In-Shelf';
+        }
+        break;
+      case 'ic':
+        if (book.borrowed) {
+          return '';
+        } else {
+          return trac;
+        }
+        break;
+      default:
+    }
+  }
   return `
     <tr class="bookitem" data-id="${book.id}">
         <td>
@@ -22,15 +62,15 @@ const TBody = (book) => {
         <td>
             <div class="availability">
                 <figure class="availability__wrap">
-                    <img src="${sub}" alt="tick">
+                    <img src="${checkit('hard')}" alt="tick">
                     <figcaption class="extra">Hard Copy</figcaption>
                 </figure>
                 <figure class="availability__wrap">
-                    <img src="${sub}" alt="tick">
+                    <img src="${checkit('ebook')}" alt="tick">
                     <figcaption class="extra">E - Book</figcaption>
                 </figure>
                 <figure class="availability__wrap">
-                    <img src="${sub}" alt="tick">
+                    <img src="${checkit('audio')}" alt="tick">
                     <figcaption class="extra">Audio book</figcaption>
                 </figure>
             </div>
@@ -38,10 +78,10 @@ const TBody = (book) => {
         <td>
             <div class="status">
                 <span class="extra">
-                    In-Shelf
+                    ${checkit('stt')}
                 </span>
                 <figure class="status__location">
-                    <img src="${trac}" alt="">
+                    <img src="${checkit('ic')}" alt="">
                     <figcaption class="extra">CS A-15</figcaption>
                 </figure>
             </div>

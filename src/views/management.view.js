@@ -1,4 +1,5 @@
-import EditForm from "./components/editForm";
+import validate from '../helper/formValidate';
+import EditForm from './components/editForm';
 
 class ManagenmentView {
   constructor() {}
@@ -18,9 +19,8 @@ class ManagenmentView {
         }
       }
     });
+    validate(formAdd);
   }
-
-  
 }
 
 export default ManagenmentView;

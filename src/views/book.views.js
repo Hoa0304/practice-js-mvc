@@ -116,17 +116,19 @@ import ManagenmentView from './management.view';
 import ManagementService from '../services/management.service';
 import ManagementController from '../controller/management.controller';
 import EditForm from './components/editForm';
-import validate from '../ultis/formValidate';
-import { collectData } from '../ultis/validate';
+import validate from '../helper/formValidate';
+import { collectData } from '../helper/validate';
 import RegisterController from '../controller/register.controller';
 import RegisterView from './register.view';
 import RegisterService from '../services/register.service';
+import auth from '../helper/auth';
 
 class BookView {
   constructor() {
     this.app = document.querySelector('#root');
     this.router = new Router();
     this.initRoute();
+
     // add toast container
     this.toastList = document.createElement('ul');
     this.toastList.classList.add('notifications');
@@ -137,6 +139,7 @@ class BookView {
     if (service) service = new service();
     if (controller) controller = new controller(view, service);
     const pathcr = window.location.pathname;
+    auth();
     if (pathcr === '/register') {
       const formrg = document.querySelector('.formregist');
       validate(formrg);
@@ -187,6 +190,7 @@ class BookView {
     const ul = logout.getElementsByTagName('ul')[0];
     const li = ul.getElementsByTagName('li')[3];
     li.addEventListener('click', (e) => {
+      sessionStorage.removeItem('ac');
       window.location.href = '/';
     });
   }
