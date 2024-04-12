@@ -1,7 +1,7 @@
 {
   "books": [
     {
-      "id": "3",
+      "id": "1",
       "image": "/harry.ad8eff26.svg",
       "name": "Don’t Make Me think",
       "author": "Steve Krug",
@@ -25,6 +25,19 @@
       "audioBook": false,
       "borrowed": false,
       "location": "CS-A15"
+    },
+     {
+      "id": "3",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": true,
+      "eBook": false,
+      "audioBook": true,
+      "borrowed": true,
+      "location": "CH HOME"
     }
   ],
   "users": [
@@ -63,6 +76,12 @@
       "name": "NguyenDat",
       "email": "chtran03042004@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": "3918",
+      "name": "HoaNgu",
+      "email": "hoa@gmail.com",
+      "password": "hoa12345"
     }
   ]
 }
