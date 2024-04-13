@@ -1,0 +1,101 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    },
+    {
+      "id": "2",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS-A15"
+    },
+    {
+      "id": "3",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": true,
+      "eBook": false,
+      "audioBook": true,
+      "borrowed": true,
+      "location": "CH HOME"
+    },
+    {
+      "id": "abf9",
+      "image": "/heart.cc742334.svg",
+      "name": "ADFDSAF",
+      "author": "ÁDFASDF",
+      "year": "ÁDFADSF",
+      "category": "ADFASDF",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": true,
+      "borrowed": false,
+      "location": "CS A-15",
+      "customer": ""
+    }
+  ],
+  "users": [
+    {
+      "name": "Cẩm Hoa",
+      "email": "chtran03042004@gmail.com",
+      "password": "1",
+      "id": "27e2"
+    },
+    {
+      "id": "97c3",
+      "name": "Hoa Tran ",
+      "email": "chtran03042004@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "a93b",
+      "name": "NguyenDat",
+      "email": "tranthicamhoa2k4s@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "e83f",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "760a",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "aeb5",
+      "name": "NguyenDat",
+      "email": "chtran03042004@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "3918",
+      "name": "HoaNgu",
+      "email": "hoa@gmail.com",
+      "password": "hoa12345"
+    }
+  ]
+}

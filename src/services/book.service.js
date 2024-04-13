@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import Toast from "../views/components/toast";
-
-class BookService {
-    constructor() {
-        this.books = []
-=======
 import { createToast } from '../views/components/handleToast';
 import api from '../api/books';
 import Book from '../model/book.model';
@@ -27,24 +20,53 @@ class BookService {
       createToast('error', error);
     }
   }
-  bindDataChanged(cb){
+  bindDataChanged(cb) {
     this.onDataChanged = cb;
   }
   async deleteBooks(id) {
     try {
-        let { data } = await api.delete(`/books/${id}`);
-        if (data) {
-            this.books = this.books.filter((book) => 
-            {
-                return book.id!== id
-            })
-            this.onDataChanged(this.books);
-        }
+      let { data } = await api.delete(`/books/${id}`);
+      if (data) {
+        this.books = this.books.filter((book) => {
+          return book.id !== id;
+        });
+        this.onDataChanged(this.books);
+      }
     } catch (error) {
-        createToast('error', error);
->>>>>>> ca2eb89 (complete delete (#29))
+      createToast('error', error);
     }
-}
+  }
+  async addBook(book) {
+    try {
+      let { data } = await api.post('/books', book);
+      if (data) {
+        this.books.push(data);
+        this.onDataChanged(this.books);
+      }
+    } catch (error) {
+      createToast('error', error);
+    }
+  }
+  async edit(id, newBook) {
+    try {
+      const { data } = await api.patch(`books/${id}`, newBook);
+      if (data) {
+        this.books = this.books.map((book) =>
+          book.id === id ? new Book({ ...book, ...newBook }) : book,
+        );
+        this.onDataChanged(this.books);
+      }
+    } catch (error) {
+      createToast('error', error);
+    }
+  }
+
+  searchBook(key) {
+    this.books = this.books.filter((book) => {
+      return book.title.toLowerCase().includes(key.toLowerCase());
+    });
+    this.onDataChanged(this.books);
+  }
 }
 
 export default BookService;

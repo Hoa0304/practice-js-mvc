@@ -1,6 +1,53 @@
-import { sub, trac } from '../../resources/assets/image';
+import { pp, sub, tick, trac, union } from '../../resources/assets/image';
 
 const TBody = (book) => {
+  function checkit(item) {
+    switch (item) {
+      case 'hard':
+        if (book.hardCopy) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'ebook':
+        if (book.eBook) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'audio':
+        if (book.audioBook) {
+          return tick;
+        } else {
+          return sub;
+        }
+        break;
+      case 'stt':
+        if (book.borrowed) {
+          return 'Borrowed';
+        } else {
+          return 'In-Shelf';
+        }
+        break;
+      case 'ic':
+        if (book.borrowed) {
+          return pp;
+        } else {
+          return trac;
+        }
+        break;
+      case 'lction':
+        if (book.borrowed) {
+          return book.location;
+        } else {
+          return 'CS A-15';
+        }
+        break;
+      default:
+    }
+  }
   return `
     <tr class="bookitem" data-id="${book.id}">
         <td>
@@ -41,8 +88,8 @@ const TBody = (book) => {
                     In-Shelf
                 </span>
                 <figure class="status__location">
-                    <img src="${trac}" alt="">
-                    <figcaption class="extra">CS A-15</figcaption>
+                    <img src="${checkit('ic')}" alt="">
+                    <figcaption class="extra">${checkit('lction')}</figcaption>
                 </figure>
             </div>
         </td>

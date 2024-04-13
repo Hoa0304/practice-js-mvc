@@ -1,4 +1,4 @@
-import EditForm from "./components/editForm";
+import EditForm from './components/editForm';
 
 class ManagenmentView {
   constructor() {}
@@ -19,8 +19,14 @@ class ManagenmentView {
       }
     });
   }
-
-  
+  bindSearch(handel) {
+    const input = this.main.querySelector('.header__wrapper--input');
+    input.addEventListener();
+    const onInputChange = (e) => {
+      const inputValue = e.target.value;
+      handel(inputValue);
+    };
+  }
 }
 
 export default ManagenmentView;
