@@ -1,10 +1,6 @@
-const QuoteItem = (content,author) => {
-    return `
-<<<<<<< HEAD
-    <div class="quote">
-=======
+const QuoteItem = (content, author) => {
+  return `
     <section class="quote hidden">
->>>>>>> ec906f5 (update (#33))
         <span class="quote--text">
             Today’s Quote
         </span>
@@ -20,7 +16,7 @@ const QuoteItem = (content,author) => {
             <div class="quote--index-circle"></div>
             <div class="quote--index-circle"></div>
         </div>
-    </div>
+    </section>
     `;
 };
 

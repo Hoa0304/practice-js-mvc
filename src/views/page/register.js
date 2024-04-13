@@ -77,7 +77,7 @@ const Register = () => {
     <div class="wrapper__form__bottoms">
         <span class="wrapper__form__bottoms--text">
             Already a User? 
-            <a class="wrapper__form__bottoms--text-link">Login now</a>
+            <a class="wrapper__form__bottoms--text-link" href="/">Login now</a>
         </span>
         <span class="wrapper__form__bottoms--text">
             Use as Guest 

@@ -2,7 +2,7 @@ import { harry, holy } from '../../resources/assets/image';
 
 const LatestItem = () => {
   return `
-    <div class="arrival">
+    <section class="arrival">
         <div class="arrival-text">New Arrivals</div>
         <div class="arrival__wrapper">
             <figure class="arrival__wrapper-book">
@@ -38,7 +38,7 @@ const LatestItem = () => {
 <img src="${harry}" alt="book">
 </figure>
         </div>
-    </div>
+    </section>
     `;
 };
 
