@@ -1,10 +1,3 @@
-<<<<<<< HEAD
-import Toast from "../views/components/toast";
-
-class BookService {
-    constructor() {
-        this.books = []
-=======
 import { createToast } from '../views/components/handleToast';
 import api from '../api/books';
 import Book from '../model/book.model';
@@ -40,12 +33,7 @@ class BookService {
         this.onDataChanged(this.books);
       }
     } catch (error) {
-<<<<<<< HEAD
-        createToast('error', error);
->>>>>>> ca2eb89 (complete delete (#29))
-=======
       createToast('error', error);
->>>>>>> ec906f5 (update (#33))
     }
   }
   async addBook(book) {
