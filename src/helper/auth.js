@@ -5,7 +5,10 @@ function auth() {
   if (!acc) {
     if (window.location.pathname !== '/') {
       window.location.href = '/';
-    }
+    } 
+     if(window.location.pathname === '/register'){
+        window.location.href = '/register';
+     }
   }
 }
 export default auth;
