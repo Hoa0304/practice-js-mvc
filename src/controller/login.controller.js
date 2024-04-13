@@ -6,9 +6,11 @@ class LoginController {
     this.view.toggleOptions();
     this.view.logout();
     this.handleDisplayData();
+    this.view.bindAddBook(this.handleAddBook);
     this.handleDelete();
     this.service.bindDataChanged(this.onDataChanged);
     this.handleShowEditForm();
+    this.handleSearchData();
   }
   async handleLogin() {
     const user = await this.service.getUsers();
@@ -16,13 +18,18 @@ class LoginController {
   }
   async handleShowEditForm() {
     const books = await this.service.getBooks();
-    this.view.toggleFormEdit(books);
+    this.view.toggleFormEdit(books, this.handleEdit);
   }
 
   async handleDisplayData() {
     const book = await this.service.getBooks();
     this.view.displayData(book);
   }
+  async handleSearchData() {
+    const book = await this.service.getBooks();
+    this.view.searchBook(book);
+  }
+
   handleDeleteData = (id) => {
     this.id = id;
     this.service.deleteBooks(id);
@@ -37,6 +44,12 @@ class LoginController {
 
   handleAddBook = (book) => {
     this.service.addBook(book);
+  };
+  handleEdit = (id, book) => {
+    this.service.edit(id, book);
+  };
+  handleSearch = (key) => {
+    this.service.searchBooks(key);
   };
 }
 

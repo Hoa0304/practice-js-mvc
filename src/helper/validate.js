@@ -16,14 +16,25 @@ export function collectData(form) {
         data[key] = parseInt(bookForm.get(key), 10);
         break;
       case 'checkbox':
-        data[key] = input.checked;
         break;
       case 'file':
-        data[key] = bookForm.get(key);
+        const file = input.files[0];
+        data[key] = file ? '/' + file.name : null;
         break;
       default:
-        data[key] = bookForm.get(key);
+        datas = bookForm.get(key);
+        if (datas === 'shelf') {
+          data[key] = false;
+        } else if (datas === 'borrowed') {
+          data[key] = true;
+        } else {
+          data[key] = datas;
+        }
     }
+    data['hardCopy'] = form.querySelector(`[name="hard"]`).checked;
+    data['eBook'] = form.querySelector(`[name="ebook"]`).checked;
+    data['audioBook'] = form.querySelector(`[name="audio"]`).checked;
+    // console.log(form.querySelector(`[name="select"]`).value);
   }
   return data;
 }

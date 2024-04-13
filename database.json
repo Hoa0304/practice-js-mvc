@@ -25,6 +25,33 @@
       "audioBook": false,
       "borrowed": false,
       "location": "CS-A15"
+    },
+    {
+      "id": "3",
+      "image": "/harry.ad8eff26.svg",
+      "name": "Don’t Make Me think",
+      "author": "Steve Krug",
+      "year": "2019",
+      "category": "Science Fiction",
+      "hardCopy": true,
+      "eBook": false,
+      "audioBook": true,
+      "borrowed": true,
+      "location": "CH HOME"
+    },
+    {
+      "id": "abf9",
+      "image": "/heart.cc742334.svg",
+      "name": "ADFDSAF",
+      "author": "ÁDFASDF",
+      "year": "ÁDFADSF",
+      "category": "ADFASDF",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": true,
+      "borrowed": false,
+      "location": "CS A-15",
+      "customer": ""
     }
   ],
   "users": [

@@ -16,7 +16,7 @@ const Header = () => {
             <input 
                 type="text" 
                 placeholder="Search"
-                class="header__wrapper--input">
+                class="header__wrapper--input searchinput">
             <button class="header__wrapper--search">
                 <img src="${search}" alt="search">
             </button>

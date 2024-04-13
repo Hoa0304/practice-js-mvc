@@ -3,7 +3,7 @@ import { createToast } from '../views/components/handleToast';
 const inputValidationRules = {
   name: /^[\p{L}\d\s!@#$%^&*()[\]{};:'",.<>/?\\|-]{1,100}$/u,
   author: /^[\p{L}\s.&]{1,50}$/u,
-  year: /^[\p{L}\d\s-]{1,4}$/u,
+  year: /^[\p{L}\d\s-]{5,}$/u,
   email: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
   category: /^[\p{L}\d\s-]{1,50}$/u,
   location: /^[\p{L}\d\s-]{1,50}$/u,
@@ -20,6 +20,11 @@ const inputCollection = {
   category: 'Category',
   location: 'Location',
   category: 'Category',
+  file: 'File',
+  hardCopy: 'hard',
+  eBook: 'ebook',
+  audioBook: 'audiobook',
+  borrowed: 'select',
 };
 
 const errorMsg = {
