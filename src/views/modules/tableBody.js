@@ -1,4 +1,4 @@
-import { sub, tick, trac, union } from '../../resources/assets/image';
+import { pp, sub, tick, trac, union } from '../../resources/assets/image';
 
 const TBody = (book) => {
   function checkit(item) {
@@ -33,9 +33,16 @@ const TBody = (book) => {
         break;
       case 'ic':
         if (book.borrowed) {
-          return '';
+          return pp;
         } else {
           return trac;
+        }
+        break;
+       case 'lction':
+        if (book.borrowed) {
+          return book.location;
+        } else {
+          return "CS A-15";
         }
         break;
       default:
@@ -82,7 +89,7 @@ const TBody = (book) => {
                 </span>
                 <figure class="status__location">
                     <img src="${checkit('ic')}" alt="">
-                    <figcaption class="extra">CS A-15</figcaption>
+                    <figcaption class="extra">${checkit('lction')}</figcaption>
                 </figure>
             </div>
         </td>

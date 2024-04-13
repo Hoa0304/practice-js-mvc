@@ -32,13 +32,13 @@ function EditForm(book) {
         console.log(book.borrowed);
         if (borrowcp) {
           return `
-            <select name="status" id="status">
+            <select name="borrowed" id="status">
             <option value="borrowed" defaultSelected>Borrowed</option>
                 <option value="shelf">In-Shelf</option>
             </select>`;
         } else {
           return `
-            <select name="status" id="status">
+            <select name="borrowed" id="status">
                 <option value="shelf" defaultSelected>In-Shelf</option>
                 <option value="borrowed">Borrowed</option>
             </select>`;
@@ -50,7 +50,7 @@ function EditForm(book) {
     <section class="wrap">
         <form action="" class="editForm" data-id= "${book.id}">
         <div class = "wrap-selectFile form-file">
-        <input type="file"> 
+        <input type="file"  name = "image" accept=".svg"> 
         <label for="file" class="form-image">Choose photo</label>
         </div>
             <label for="name">Name Book</label>
@@ -63,15 +63,15 @@ function EditForm(book) {
             <input type="text" placeholder="${book.category}" class="form-input">
             <label for="availability">Availability</label>
             <div class="form-box">
-                <input type="checkbox" name="hard" id="checked" class="hardCP" ${checkit('hard')} >
+                <input type="checkbox" name="hard" class="hardCP" ${checkit('hard')} >
                 <label for="hard">Hard Copy</label>
             </div>
             <div class="form-box">
-                <input type="checkbox" name="ebook" id="checked" class="eBook" ${checkit('ebook')}>
+                <input type="checkbox" name="ebook" class="eBook" ${checkit('ebook')}>
                 <label for="ebook">E - Book</label>
             </div>
             <div class="form-box">
-                <input type="checkbox" name="audio" id="checked" class="aBook" ${checkit('audio')}>
+                <input type="checkbox" name="audio"  class="aBook" ${checkit('audio')}>
                 <label for="audio">Audio Book</label>
             </div>
             <div class="form-status">
@@ -82,7 +82,7 @@ function EditForm(book) {
             <input type="text" name="customer" placeholder="${book.location}" id="address">
         </section>
             </div>
-            <button class="form-button">Save</button>
+            <button class="form-button btnedits">Save</button>
             <button class="form-button btncancel">Cancel</button>
         </form>
     </section>

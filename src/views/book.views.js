@@ -21,6 +21,8 @@ import RegisterController from '../controller/register.controller';
 import RegisterView from './register.view';
 import RegisterService from '../services/register.service';
 import auth from '../helper/auth';
+import Book from '../model/book.model';
+import { createToast } from './components/handleToast';
 
 class BookView {
   constructor() {
@@ -93,7 +95,25 @@ class BookView {
       window.location.href = '/';
     });
   }
-
+  searchBook(books) {
+    console.log('Searching');
+    this.books = books;
+    const searchip = document.querySelector('.searchinput');
+    searchip.addEventListener('input', (e) => {
+      const value = e.target.value.toLowerCase();
+      this.books.forEach((book) => {
+        console.log(book.name);
+      });
+      const filterdt = this.books.filter((book) =>
+        book.name.toLowerCase().includes(value),
+      );
+      console.log(value);
+      this.displayData(filterdt);
+      if (value === '') {
+        this.displayData(books);
+      }
+    });
+  }
   displayData(books) {
     this.books = books;
     const ttable = document.querySelector('.table__body');
@@ -113,12 +133,10 @@ class BookView {
 
     ttable.innerHTML = html;
   }
-  toggleFormEdit(books) {
+  toggleFormEdit(books, handle) {
     this.books = books;
     const wrapForm = document.querySelector('.mana__editForm');
-    const formEdit = document.querySelector('.editForm');
     const buttonForm = document.querySelectorAll('.editbtn');
-    const buttoncancel = document.querySelector('.btncancel');
     buttonForm.forEach((btn) => {
       btn.addEventListener('click', (e) => {
         wrapForm.classList.toggle('hidden');
@@ -133,6 +151,25 @@ class BookView {
               wrapForm.classList.toggle('hidden');
             });
           }
+        });
+        const formEdit = document.querySelector('.editForm');
+        const buttoncancel = document.querySelector('.btncancel');
+        const btnedits = document.querySelector('.btnedits');
+        btnedits.addEventListener('click', (e) => {
+          e.preventDefault();
+          console.log(formEdit);
+          let dtb = collectData(formEdit);
+          if (dtb.location === null) {
+            dtb.location = 'CS A-15';
+          }
+          let dataBook = this.books.find((item) => item.id === id);
+          for (let i in dtb) {
+            if (dataBook[i] !== dtb[i]) {
+              dataBook[i] = dtb[i];
+            }
+          }
+          console.log(dataBook);
+          handle(id, dataBook);
         });
       });
     });
@@ -179,11 +216,17 @@ class BookView {
 
   bindAddBook(handle) {
     const addBtn = document.querySelector('.form-button');
-    addBtn.addEventListener('click', () => {
-      if (this.checkValidForm()) {
-        this.submitForm(handle);
-        clearForm(this.form);
-        this.toggleModal(false);
+    addBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const formAdd = document.querySelector('.form');
+      if (this.checkValidForm(formAdd)) {
+        let dtb = collectData(formAdd);
+        if (dtb.location === '') {
+          dtb.location = 'CS A-15';
+        }
+        console.log(dtb.location);
+        const book = new Book(dtb);
+        handle(book);
         createToast('info', 'Insert Success!');
       } else createToast('warning', 'Insert Failed: Check your data!');
     });

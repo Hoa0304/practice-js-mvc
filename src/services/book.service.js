@@ -40,7 +40,6 @@ class BookService {
     try {
       let { data } = await api.post('/books', book);
       if (data) {
-        data = await data.map((book) => new Book(book));
         this.books.push(data);
         this.onDataChanged(this.books);
       }
@@ -48,12 +47,13 @@ class BookService {
       createToast('error', error);
     }
   }
-  async editBook(id, newBook) {
+  async edit(id, newBook) {
     try {
-      let { data } = await api.put(`/books/${id}`, newBook);
+      const { data } = await api.patch(`books/${id}`, newBook);
       if (data) {
-        data = await data.map((book) => new Book(book));
-        this.books = this.books.map((book) => (book.id === id ? data : book));
+        this.books = this.books.map((book) =>
+          book.id === id ? new Book({ ...book, ...newBook }) : book,
+        );
         this.onDataChanged(this.books);
       }
     } catch (error) {
@@ -62,9 +62,10 @@ class BookService {
   }
 
   searchBook(key) {
-    return this.books.filter((book) => {
+    this.books = this.books.filter((book) => {
       return book.title.toLowerCase().includes(key.toLowerCase());
     });
+    this.onDataChanged(this.books);
   }
 }
 

@@ -21,6 +21,14 @@ class ManagenmentView {
     });
     validate(formAdd);
   }
+  bindSearch(handel) {
+    const input = this.main.querySelector('.header__wrapper--input');
+    input.addEventListener();
+    const onInputChange = (e) => {
+      const inputValue = e.target.value;
+      handel(inputValue);
+    };
+  }
 }
 
 export default ManagenmentView;

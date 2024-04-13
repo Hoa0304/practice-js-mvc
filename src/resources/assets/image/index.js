@@ -20,3 +20,4 @@ export { default as think } from './think.svg';
 export { default as tick } from './tick.svg';
 export { default as trac } from './trac.svg';
 export { default as me } from './me.jpg'; //heart complete
+export { default as pp } from './pp.svg';
