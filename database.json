@@ -41,7 +41,7 @@
     },
     {
       "id": "abf9",
-      "image": "/heart.cc742334.svg",
+      "image": null,
       "name": "ADFDSAF",
       "author": "ÁDFASDF",
       "year": "ÁDFADSF",
@@ -49,9 +49,9 @@
       "hardCopy": false,
       "eBook": true,
       "audioBook": true,
-      "borrowed": false,
+      "borrowed": true,
       "location": "CS A-15",
-      "customer": ""
+      "customer": "yuui"
     }
   ],
   "users": [

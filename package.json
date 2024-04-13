@@ -1,6 +1,7 @@
 {
   "scripts": {
     "dev": "parcel src/resources/index.html",
+    "build": "parcel build",
     "prepare": "husky install",
     "postinstall": "husky install",
     "watch": "json-server --watch database.json --port 8000"
