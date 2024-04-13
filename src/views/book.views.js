@@ -121,12 +121,14 @@ import { collectData } from '../ultis/validate';
 import RegisterController from '../controller/register.controller';
 import RegisterView from './register.view';
 import RegisterService from '../services/register.service';
+import auth from '../ultis/auth';
 
 class BookView {
   constructor() {
     this.app = document.querySelector('#root');
     this.router = new Router();
     this.initRoute();
+
     // add toast container
     this.toastList = document.createElement('ul');
     this.toastList.classList.add('notifications');
@@ -137,6 +139,7 @@ class BookView {
     if (service) service = new service();
     if (controller) controller = new controller(view, service);
     const pathcr = window.location.pathname;
+    auth();
     if (pathcr === '/register') {
       const formrg = document.querySelector('.formregist');
       validate(formrg);
@@ -187,6 +190,7 @@ class BookView {
     const ul = logout.getElementsByTagName('ul')[0];
     const li = ul.getElementsByTagName('li')[3];
     li.addEventListener('click', (e) => {
+      sessionStorage.removeItem('ac');
       window.location.href = '/';
     });
   }
