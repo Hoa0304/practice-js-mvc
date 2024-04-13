@@ -6,13 +6,22 @@
     margin: 2% 0 0 2%;
     background-color: $fifth-color;
     border-radius: 10px;
-    @include flex();    
+    @include flex();
+    @include mobile {
+        margin: 4%;
+        width: 90%;
+        height: 95%;
+
+    } 
     &__sidebar {
         width: 20%;
     }
     &__main {
-        width: 80%;
+        width: 80%; 
         padding: 2%;
+        @include mobile {
+            width: 98%;
+        }
         &__top {
             margin-bottom: 3%;
         }
