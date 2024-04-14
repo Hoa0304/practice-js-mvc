@@ -27,7 +27,11 @@ export function collectData(form) {
           data[key] = false;
         } else if (datas === 'borrowed') {
           data[key] = true;
+        } else if (datas === '') {
+          data[key] = input.getAttribute('placeholder');
         } else {
+          console.log(datas);
+          console.log(input.getAttribute('placeholder'));
           data[key] = datas;
         }
     }

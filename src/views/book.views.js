@@ -153,14 +153,16 @@ class BookView {
             });
           }
         });
-        const formEdit = document.querySelector('.editForm');
         const buttoncancel = document.querySelector('.btncancel');
         const btnedits = document.querySelector('.btnedits');
         btnedits.addEventListener('click', (e) => {
           e.preventDefault();
+          const formEdit = document.querySelector('.editForm');
           console.log(formEdit);
           let dtb = collectData(formEdit);
-          if (dtb.location === null) {
+          for (let i in dtb) {
+          }
+          if (dtb.location === '') {
             dtb.location = 'CS A-15';
           }
           let dataBook = this.books.find((item) => item.id === id);
@@ -169,7 +171,6 @@ class BookView {
               dataBook[i] = dtb[i];
             }
           }
-          console.log(dataBook);
           handle(id, dataBook);
         });
       });

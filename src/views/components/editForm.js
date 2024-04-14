@@ -54,13 +54,13 @@ function EditForm(book) {
         <label for="file" class="form-image">Choose photo</label>
         </div>
             <label for="name">Name Book</label>
-            <input type="text" placeholder="${book.name}" class="form-input">
+            <input type="text" name="name" placeholder="${book.name}" class="form-input">
             <label for="author">Author Book</label>
-            <input type="text" placeholder="${book.author}" class="form-input">
+            <input type="text" name="author" placeholder="${book.author}" class="form-input">
             <label for="year">Year Of Birth</label>
-            <input type="text" placeholder="${book.year}" class="form-input">
+            <input type="text" name="year" placeholder="${book.year}" class="form-input">
             <label for="category">Category</label>
-            <input type="text" placeholder="${book.category}" class="form-input">
+            <input type="text" name="category" placeholder="${book.category}" class="form-input">
             <label for="availability">Availability</label>
             <div class="form-box">
                 <input type="checkbox" name="hard" class="hardCP" ${checkit('hard')} >
@@ -79,7 +79,7 @@ function EditForm(book) {
             <label for="status" class="status">Status</label><br/>
              ${checkit('borrow')}
             <i class="fa-solid fa-chevron-down icon"></i>
-            <input type="text" name="customer" placeholder="${book.location}" id="address">
+            <input type="text" name="location" placeholder="${book.location}" id="address">
         </section>
             </div>
             <button class="form-button btnedits">Save</button>
