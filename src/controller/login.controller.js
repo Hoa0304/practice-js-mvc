@@ -3,7 +3,6 @@ class LoginController {
     this.view = view;
     this.service = service;
     this.handleLogin();
-    this.view.showPw();
     this.view.toggleOptions();
     this.view.logout();
     this.handleDisplayData();
@@ -16,6 +15,7 @@ class LoginController {
   async handleLogin() {
     const user = await this.service.getUsers();
     this.view.login(user);
+    this.view.showPw();
   }
   async handleShowEditForm() {
     const books = await this.service.getBooks();
