@@ -4,12 +4,13 @@ function auth() {
   console.log(acc);
   if (!acc) {
     if (window.location.pathname !== '/') {
-      window.location.href = '/';
-    } 
-     if(window.location.pathname === '/register'){
-        window.location.href = '/register';
+      if (window.location.pathname === '/register') {
         return;
-     }
+      } else {
+        window.location.href = '/';
+        return;
+      }
+    }
   }
 }
 export default auth;
