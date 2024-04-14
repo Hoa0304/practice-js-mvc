@@ -3,7 +3,6 @@ import Header from '../layouts/header';
 import Button from '../modules/button';
 import Table from '../components/table';
 import Form from '../components/form';
-import EditForm from '../components/editForm';
 
 const Mana = () => {
   return `

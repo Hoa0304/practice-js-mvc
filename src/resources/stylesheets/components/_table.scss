@@ -5,6 +5,8 @@
     width: 97%;
     margin-top: 5%;
     color: $text;
+    overflow: scroll;
+
     &__head {
         @include font($primary-font,16px,700);
         th {

@@ -16,13 +16,20 @@
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: 10;
-        
     }
     &__main {
         width: 80%;
         padding: 2%;
+        overflow: hidden;
         &-header {
             margin-bottom: 2%;
+        }
+        &-body {
+            height: 95%;
+           overflow: scroll;
+           &::-webkit-scrollbar{
+            width: 0;
+           }
         }
     }
 }

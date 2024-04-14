@@ -70,6 +70,7 @@ class BookView {
     const bookData = collectData(formName);
     id ? handel(id, bookData) : handel(bookData);
   }
+
   toggleOptions() {
     const buttonOption = document.querySelector('.header__profile--button');
     const options = document.querySelector('.header__profile--option');

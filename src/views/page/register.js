@@ -46,10 +46,10 @@ const Register = () => {
             name="password"
             type="password"
             placeholder="Your password"
-            class="wrapper__form__box-input"
+            class="wrapper__form__box-input passws"
             id="password"
         />
-        <figure>
+        <figure class = "eyep">
         <img src="${off}">
         </figure>
         </div>
@@ -62,10 +62,10 @@ const Register = () => {
             type="password"
             name="password"
             placeholder="Confirm Password"
-            class="wrapper__form__box-input"
+            class="wrapper__form__box-input passcf"
             id="confirm"
         />
-        <figure>
+        <figure class = "eyecf"> 
         <img src="${off}">
         </figure>
         </div>

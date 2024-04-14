@@ -3,6 +3,7 @@ class LoginController {
     this.view = view;
     this.service = service;
     this.handleLogin();
+    this.view.showPw();
     this.view.toggleOptions();
     this.view.logout();
     this.handleDisplayData();

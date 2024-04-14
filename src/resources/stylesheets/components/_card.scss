@@ -13,6 +13,7 @@
     &__text {
         color: $text;
         padding: 0 10% 10% 10%;
+        overflow: hidden;
         &-primary {
             @include font($third-font, 12px, 400);
             white-space: nowrap;

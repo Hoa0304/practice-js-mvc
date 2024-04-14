@@ -1,4 +1,4 @@
-import { logo, off } from "../../resources/assets/image";
+import { logo, off } from '../../resources/assets/image';
 
 const Login = () => {
   return `
@@ -33,10 +33,10 @@ const Login = () => {
           <input
           type="password"
           placeholder="Your password"
-          class="wrapper__form__box-input"
+          class="wrapper__form__box-input passw"
           id="password"
           />
-          <figure>
+          <figure class="eye">
           <img src="${off}">
           </figure>
           </div>

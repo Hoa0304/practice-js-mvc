@@ -1,6 +1,4 @@
 import validate from '../helper/formValidate';
-import EditForm from './components/editForm';
-
 class ManagenmentView {
   constructor() {}
   toggleForm() {

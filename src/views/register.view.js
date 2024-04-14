@@ -1,12 +1,11 @@
+import { collectData } from '../helper/validate';
 import User from '../model/users.model';
-import { clearForm, collectData } from '../helper/validate';
 import { createToast } from './components/handleToast';
 
 class RegisterView {
   constructor() {}
   submitForm(handel, formName, id) {
     const bookData = collectData(formName);
-    console.log(bookData);
     id ? handel(id, bookData) : handel(bookData);
   }
   checkValidForm(formname) {

@@ -2,11 +2,11 @@
   "books": [
     {
       "id": "1",
-      "image": "/harry.ad8eff26.svg",
+      "image": "/think.bf821c09.svg",
       "name": "Don’t Make Me think",
       "author": "Steve Krug",
       "year": "2019",
-      "category": "Science Fiction",
+      "category": "Computer Science",
       "hardCopy": false,
       "eBook": false,
       "audioBook": false,
@@ -16,10 +16,10 @@
     {
       "id": "2",
       "image": "/harry.ad8eff26.svg",
-      "name": "Don’t Make Me think",
-      "author": "Steve Krug",
-      "year": "2019",
-      "category": "Science Fiction",
+      "name": "Harry Potter and The Philosopher's Stone",
+      "author": "J.K. Rowling",
+      "year": "2000",
+      "category": "Computer Science",
       "hardCopy": false,
       "eBook": false,
       "audioBook": false,
@@ -27,21 +27,8 @@
       "location": "CS-A15"
     },
     {
-      "id": "3",
-      "image": "/harry.ad8eff26.svg",
-      "name": "Don’t Make Me think",
-      "author": "Steve Krug",
-      "year": "2019",
-      "category": "Science Fiction",
-      "hardCopy": true,
-      "eBook": false,
-      "audioBook": true,
-      "borrowed": true,
-      "location": "CH HOME"
-    },
-    {
       "id": "abf9",
-      "image": null,
+      "image": "/react.3fc66731.svg",
       "name": "ADFDSAF",
       "author": "ÁDFASDF",
       "year": "ÁDFADSF",
@@ -52,15 +39,48 @@
       "borrowed": true,
       "location": "CS A-15",
       "customer": "yuui"
+    },
+    {
+      "id": "0b7d",
+      "image": null,
+      "name": "n cjs",
+      "author": "sfgtdhg",
+      "year": "20076",
+      "category": "43dfgdfgdf",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "35stgeers"
+    },
+    {
+      "id": "c627",
+      "image": null,
+      "name": "fgsgv",
+      "author": "ửtert",
+      "year": "4wy5ujytr",
+      "category": "rưeyjhteh",
+      "hardCopy": false,
+      "eBook": true,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "rthertyhe"
+    },
+    {
+      "id": "01a5",
+      "image": null,
+      "name": "dsgàdsfa",
+      "author": "sdfgd",
+      "year": "sadfg",
+      "category": "adfasdf",
+      "hardCopy": false,
+      "eBook": false,
+      "audioBook": false,
+      "borrowed": false,
+      "location": "CS A-15"
     }
   ],
   "users": [
-    {
-      "name": "Cẩm Hoa",
-      "email": "chtran03042004@gmail.com",
-      "password": "1",
-      "id": "27e2"
-    },
     {
       "id": "97c3",
       "name": "Hoa Tran ",
@@ -74,28 +94,10 @@
       "password": "12345"
     },
     {
-      "id": "e83f",
-      "name": "NguyenDat",
-      "email": "chtran03042004@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "760a",
-      "name": "NguyenDat",
-      "email": "chtran03042004@gmail.com",
-      "password": "12345"
-    },
-    {
       "id": "aeb5",
-      "name": "NguyenDat",
-      "email": "chtran03042004@gmail.com",
-      "password": "12345"
-    },
-    {
-      "id": "3918",
-      "name": "HoaNgu",
-      "email": "hoa@gmail.com",
-      "password": "hoa12345"
+      "name": "TranMan",
+      "email": "man@gmail.com",
+      "password": "man12345"
     }
   ]
 }

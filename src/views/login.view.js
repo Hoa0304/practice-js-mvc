@@ -27,6 +27,20 @@ class LoginView {
       }
     });
   }
+  showPw() {
+    console.log('showPw');
+    const eye = document.querySelector('.eye');
+    const eyep = document.querySelector('.eyep');
+    const eyecfg = document.querySelector('.eyecf');
+    eye.addEventListener('click', () => {
+      const pass = document.querySelector('.passw');
+      if (pass.type === 'password') {
+        pass.type = 'text';
+      } else {
+        pass.type = 'password';
+      }
+    });
+  }
 }
 
 export default LoginView;
