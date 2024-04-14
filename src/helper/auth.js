@@ -8,6 +8,7 @@ function auth() {
     } 
      if(window.location.pathname === '/register'){
         window.location.href = '/register';
+        return;
      }
   }
 }
