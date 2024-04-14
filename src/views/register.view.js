@@ -27,9 +27,8 @@ class RegisterView {
         const dtb = collectData(formrg);
         const pw = document.querySelector('#password');
         const confirm = document.querySelector('#confirm');
-        if (pw === confirm) {
+        if (pw.value === confirm.value) {
           const usern = new User(dtb);
-          console.log(usern);
           handle(usern);
         } else {
           createToast('warning', 'Confirm passwords do not match');

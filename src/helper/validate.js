@@ -35,10 +35,12 @@ export function collectData(form) {
           data[key] = datas;
         }
     }
-    data['hardCopy'] = form.querySelector(`[name="hard"]`).checked;
-    data['eBook'] = form.querySelector(`[name="ebook"]`).checked;
-    data['audioBook'] = form.querySelector(`[name="audio"]`).checked;
-    // console.log(form.querySelector(`[name="select"]`).value);
+    if (window.location.pathname === '/management') {
+      data['hardCopy'] = form.querySelector(`[name="hard"]`).checked;
+      data['eBook'] = form.querySelector(`[name="ebook"]`).checked;
+      data['audioBook'] = form.querySelector(`[name="audio"]`).checked;
+      // console.log(form.querySelector(`[name="select"]`).value);
+    }
   }
   return data;
 }
