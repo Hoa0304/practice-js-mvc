@@ -5,21 +5,10 @@ import Home from './page/home';
 import Router from '../router/Router';
 import TBody from './modules/tableBody';
 import Card from './modules/card';
-import LoginController from '../controller/login.controller';
-import LoginView from './login.view';
-import LoginService from '../services/login.service';
-import HomeController from '../controller/home.controller';
-import HomeView from './home.view';
-import HomeService from '../services/home.service';
-import ManagenmentView from './management.view';
-import ManagementService from '../services/management.service';
-import ManagementController from '../controller/management.controller';
+import LoginController from '../controller/book.controller';
 import EditForm from './components/editForm';
 import validate from '../helper/formValidate';
 import { collectData } from '../helper/validate';
-import RegisterController from '../controller/register.controller';
-import RegisterView from './register.view';
-import RegisterService from '../services/register.service';
 import auth from '../helper/auth';
 import Book from '../model/book.model';
 import { createToast } from './components/handleToast';
@@ -29,16 +18,14 @@ class BookView {
     this.app = document.querySelector('#root');
     this.router = new Router();
     this.initRoute();
-
+    this.container = document.createElement('div');
+    this.container.classList.add('container');
     // add toast container
     this.toastList = document.createElement('ul');
     this.toastList.classList.add('notifications');
+    this.app.appendChild(this.container);
     this.app.appendChild(this.toastList);
-
-    let { controller, service, view } = this.router.findRoute();
-    if (view) view = new view();
-    if (service) service = new service();
-    if (controller) controller = new controller(view, service);
+    this.router.changeRoute();
     const pathcr = window.location.pathname;
     auth();
     if (pathcr === '/register') {
@@ -46,25 +33,108 @@ class BookView {
       validate(formrg);
     }
   }
+  toggleForm() {
+    const wrapForm = document.querySelector('.mana__form');
+    const formAdd = document.querySelector('.form');
+    const buttonForm = document.querySelector('.browser-create');
 
+    buttonForm.addEventListener('click', (e) => {
+      wrapForm.classList.toggle('hidden');
+    });
+    document.addEventListener('click', (e) => {
+      const target = e.target;
+      if (!wrapForm.classList.contains('hidden')) {
+        if (!formAdd.contains(target) && !buttonForm.contains(target)) {
+          wrapForm.classList.toggle('hidden');
+        }
+      }
+    });
+    validate(formAdd);
+  }
+  submitForm(handel, formName, id) {
+    const bookData = collectData(formName);
+    id ? handel(id, bookData) : handel(bookData);
+  }
+  checkValidForm(formname) {
+    const inputs = [...formname.querySelectorAll('input')];
+    return !inputs.some((input) => input.classList.contains('invalid'));
+  }
+
+  clearInvalid(formname) {
+    const inputs = [...formname.querySelectorAll('input')];
+    inputs.map((input) => input.classList.remove('invalid'));
+  }
+  bindAddUser(handle) {
+    const regbutton = document.querySelector('.wrapper__form-reg');
+    const formrg = document.querySelector('.formregist');
+
+    regbutton.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.checkValidForm(formrg)) {
+        const dtb = collectData(formrg);
+        const pw = document.querySelector('#password');
+        const confirm = document.querySelector('#confirm');
+        if (pw.value === confirm.value) {
+          const usern = new User(dtb);
+          handle(usern);
+        } else {
+          createToast('warning', 'Confirm passwords do not match');
+        }
+        // clearForm(formrg);
+      }
+    });
+  }
+  bindSearch(handel) {
+    const input = this.main.querySelector('.header__wrapper--input');
+    input.addEventListener();
+    const onInputChange = (e) => {
+      const inputValue = e.target.value;
+      handel(inputValue);
+    };
+  }
+  login(users) {
+    this.users = users;
+    const formLogin = document.querySelector('.wrapper__form-log');
+    const accepts = document.querySelectorAll('input[type="checkbox"]:checked');
+
+    formLogin.addEventListener('click', (e) => {
+      e.preventDefault();
+      const email = document.querySelector('#email').value;
+      const password = document.querySelector('#password').value;
+      if (email === '') {
+        createToast('warning', 'Please enter a email');
+      }
+      if (password === '') {
+        createToast('warning', 'Please enter a password');
+      }
+      const foundUser = this.users.find(
+        (user) => email === user.email && password === user.password,
+      );
+      if (foundUser) {
+        sessionStorage.setItem('acc', 'acc');
+        window.location.href = '/home';
+      }
+    });
+  }
+  showPw() {
+    console.log('showPw');
+    const eye = document.querySelector('.eye');
+    const eyep = document.querySelector('.eyep');
+    const eyecfg = document.querySelector('.eyecf');
+    eye.addEventListener('click', () => {
+      const pass = document.querySelector('.passw');
+      if (pass.type === 'password') {
+        pass.type = 'text';
+      } else {
+        pass.type = 'password';
+      }
+    });
+  }
   initRoute() {
-    this.router.define('/', Login(), LoginController, LoginView, LoginService);
-    this.router.define(
-      '/management',
-      Mana(),
-      ManagementController,
-      ManagenmentView,
-      ManagementService,
-    );
-    this.router.define(
-      '/register',
-      Register(),
-      RegisterController,
-      RegisterView,
-      RegisterService,
-    );
-    this.router.define('/home', Home(), HomeController, HomeView, HomeService);
-    this.router.listen();
+    this.router.addRoute('/', Login());
+    this.router.addRoute('/management', Mana());
+    this.router.addRoute('/register', Register());
+    this.router.addRoute('/home', Home());
   }
   submitForm(handel, formName, id) {
     const bookData = collectData(formName);
@@ -133,6 +203,23 @@ class BookView {
     });
 
     ttable.innerHTML = html;
+  }
+  changeQuote() {
+    const quote = document.querySelectorAll('.quote');
+    let currentQuoteIndex = 0;
+    window.addEventListener('DOMContentLoaded', () => {
+      quote[0].classList.remove('hidden');
+      quote[0].style.display = 'flex';
+    });
+    setInterval(() => {
+      quote.forEach((quotes) => {
+        quotes.classList.add('hidden');
+        quotes.style.display = 'none';
+      });
+      quote[currentQuoteIndex].classList.remove('hidden');
+      quote[currentQuoteIndex].style.display = 'flex';
+      currentQuoteIndex = (currentQuoteIndex + 1) % quote.length;
+    }, 2000);
   }
   toggleFormEdit(books, handle) {
     this.books = books;

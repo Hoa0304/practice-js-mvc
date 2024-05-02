@@ -19,9 +19,17 @@
 }
 .name {
     @include font($primary-font,17px, 600);
+    max-width: 320px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .extra {
     @include font($primary-font, 12px, 600);
+     max-width: 320px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 .category {
     @include flex($direction: column,$justify: center);
