@@ -7,8 +7,11 @@
     @include flex();
     border: 2px solid transparent;
     border-image: linear-gradient(140.88deg, #EB5231 -29.15%, #571FCF 151.64%) 1;
+    @include tablet {
+        width: 60%;
+    }
     &-text {
-        width: 5%;
+        width: 30px;
         writing-mode: vertical-rl;
         text-orientation: right;
         transform: rotate(180deg);

@@ -20,8 +20,8 @@ const Mana = () => {
                 ${Header()}
             </div>
             <div class="mana__main-body">
-            ${Button()}
-            ${Table()}
+                ${Button()}
+                ${Table()}
             </div>
         </div>
     </div>
