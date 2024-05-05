@@ -26,7 +26,12 @@
         }
         &-secondary {
             @include font($third-font, 10px, 400);
-
+            white-space: nowrap;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1;
+            word-break: break-all;
         }
         &--evaluate {
             @include font($third-font, 11px, 400);

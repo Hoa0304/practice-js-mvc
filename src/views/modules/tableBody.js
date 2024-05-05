@@ -38,11 +38,11 @@ const TBody = (book) => {
           return trac;
         }
         break;
-       case 'lction':
+      case 'lction':
         if (book.borrowed) {
           return book.location;
         } else {
-          return "CS A-15";
+          return 'CS A-15';
         }
         break;
       default:
@@ -50,7 +50,7 @@ const TBody = (book) => {
   }
   return `
     <tr class="bookitem" data-id="${book.id}">
-        <td>
+        <td class="titleCol">
             <figure class="title">
                 <img src="${book.image}" alt="">
                 <figcaption>
@@ -60,13 +60,13 @@ const TBody = (book) => {
                 </figcaption>
             </figure>
         </td>
-        <td>
+        <td class="categoryCol">
             <div class="category">
                 <span class="name">${book.category}</span>
                 <span class="extra">UX Design</span>
             </div>
         </td>
-        <td>
+        <td class="availabilityCol">
             <div class="availability">
                 <figure class="availability__wrap">
                     <img src="${checkit('hard')}" alt="tick">
@@ -82,7 +82,7 @@ const TBody = (book) => {
                 </figure>
             </div>
         </td>
-        <td>
+        <td class="statusCol">
             <div class="status">
                 <span class="extra">
                     ${checkit('stt')}
@@ -93,7 +93,7 @@ const TBody = (book) => {
                 </figure>
             </div>
         </td>
-        <td>
+        <td class="btn">
             <button class="extra deletebtn">Delete</button>
             <button class="extra editbtn">Edit</button>
         </td>

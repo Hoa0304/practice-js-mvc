@@ -1,8 +1,9 @@
 @use '../abstracts' as *;
 
 .browser {
-    width: 19%;
-    @include flex($justify: space-between);
+    width: 40%;
+    height: 5%;
+    @include flex($gap: 10px);
     @include font($primary-font,13px,600);
     button {
         border: none;
@@ -11,28 +12,28 @@
     }
     &__wrapper {
         @include flex($justify: center,$align:center);
-        width: 50%;
+        width: 80px;
         background-color: $fourth-color;
         border-radius: 20px;
         border: 1px solid $border-color;
-        padding: 1% 0 1% 5%;
         &-arrow {
             background-color: $fourth-color;
-            width: 30%;
+            width: 17%;
+            height: 50%;
+            img {
+                width: 100%;
+                padding-bottom: 5px;
+            }
         }
         &-option {
             display: none;
         }
     }
     &-create {
-        text-align: center;
-        width: 40%;
+        @include flex($justify: center,$align:center);
+        width: 70px;
         height: 100%;
         background-color: $third-color;
         color: $fourth-color;
-    }
-    img {
-        width: 50%;
-        padding-left: 2px;
     }
 }
