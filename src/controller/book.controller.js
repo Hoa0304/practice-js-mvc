@@ -2,7 +2,6 @@ class LoginController {
   constructor(view, service) {
     this.view = view;
     this.service = service;
-    this.view.logout();
     this.flag();
     this.service.bindDataChanged(this.onDataChanged);
     this.handleSearchData();
@@ -64,12 +63,16 @@ class LoginController {
         this.view.changeQuote();
         this.view.toggleOptions();
         this.handleDisplayData();
+
+        this.view.logout();
         this.view.handleToggleModal();
         break;
       case '/management':
         this.handleDisplayData();
         this.view.toggleForm();
+
         this.view.bindAddBook(this.handleAddBook);
+        this.view.logout();
         this.handleDelete();
         this.handleShowEditForm();
         break;

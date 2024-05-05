@@ -12,6 +12,7 @@ import { collectData } from '../helper/validate';
 import auth from '../helper/auth';
 import Book from '../model/book.model';
 import { createToast } from './components/handleToast';
+import User from '../model/users.model';
 
 class BookView {
   constructor() {
@@ -77,6 +78,9 @@ class BookView {
         if (pw.value === confirm.value) {
           const usern = new User(dtb);
           handle(usern);
+          setTimeout(() => {
+            window.location.href = '/';
+          }, 2000);
         } else {
           createToast('warning', 'Confirm passwords do not match');
         }

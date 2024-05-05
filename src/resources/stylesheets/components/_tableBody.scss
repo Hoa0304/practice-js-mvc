@@ -40,6 +40,7 @@
     overflow: hidden;
     -webkit-line-clamp: 2;
     text-overflow: ellipsis;
+    padding-bottom: 2px;
     @include tablet {
         @include font($primary-font, 15px, 600);
     }
